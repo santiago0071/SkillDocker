@@ -1,6 +1,6 @@
 # SkillDocker 🛸
 
-> **多款 AI 编程工具 Skills 的桌面悬浮管理面板**  
+> **AI Skills新人友好的Skill管理，铸造，诊断，学习一体化的轻量管理器**  
 > **A lightweight desktop floating dock to inspect, toggle, and hot-inject directives across Claude Code, Cursor, Antigravity, and Codex.**  
 > *集中查看、一键开关、随时为正在运行的 AI 追加临时要求。纯本地离线运行，不上传代码。*
 
@@ -114,18 +114,17 @@ powershell -ExecutionPolicy Bypass -File .\scripts\verify.ps1
 
 ## ☕ 赞助与支持 / Sponsor & Support
 
-SkillDocker 由独立开发者利用业余时间精心研发与持续维护。如果您在日常工作流中感受到了它带来的秩序与便利，欢迎通过以下方式给予支持：
+欢迎通过以下方式随缘支持：
 
 If SkillDocker brings order and clarity to your daily agent workflow, any support for its continued independent maintenance is deeply appreciated:
 
 ### 1. 软件支持 / Commercial License
 * 在官网获取 [SkillDocker Pro 商业买断授权](https://skilldocker.com/buy/)，享受完整深度诊断特性。
 
-### 2. 社区捐赠 / Ko-fi
+### 2. Ko-fi
 * **Ko-fi**: [https://ko-fi.com/unistudio](https://ko-fi.com/unistudio) (支持信用卡 / PayPal / Apple Pay)
 
-### 3. 加密货币支持 / Crypto Donations (Direct On-Chain)
-面向全球极客开发者，支持以下链上直接赞助地址：
+### 3. Crypto Donations (Direct On-Chain)
 
 ```text
 Bitcoin (BTC):
@@ -145,7 +144,7 @@ NEAR Protocol:
 ```
 
 ### 4. 开源支持 / Open Source
-* 给本仓库点亮一颗 **Star 🌟**，或将它分享给身边正在被散乱 Prompt 困扰的朋友！
+* 点亮一颗 **Star 🌟**，或将它分享给身边正在被散乱 Prompt 困扰的朋友！
 
 ---
 
