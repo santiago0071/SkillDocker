@@ -153,5 +153,4 @@ NEAR Protocol:
 * 核心框架代码采用 [MIT License](LICENSE) 开源许可；
 * Pro 商业扩展模块适用 [LICENSE-PRO](LICENSE-PRO) 专有商业许可。
 
-Crafted with care by **UniStudio** (by UniPublisher).  
 Official Website: [https://skilldocker.com](https://skilldocker.com)
