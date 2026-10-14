@@ -1,8 +1,8 @@
 # SkillDocker 🛸
 
-> **The Visual Dock & Live Steering Hub for AI Agent Skills**  
-> **面向 AI Agent Skill 的桌面可视化驾驭与动态注入底座**  
-> *A local-first, lightweight desktop HUD to discover, inspect, and hot-inject directives across Google Antigravity, Anthropic Claude Code, OpenAI Codex, and Cursor.*
+> **AI 编程工具规则与技能的桌面悬浮管理面板**  
+> **A lightweight desktop floating dock to inspect, toggle, and hot-inject rules across Claude Code, Cursor, Antigravity, and Codex.**  
+> *集中查看、一键开关、随时为正在运行的 AI 追加临时要求。纯本地离线运行，不上传代码。*
 
 [![Release: v1.0.0](https://img.shields.io/badge/Release-v1.0.0-blue.svg)](https://github.com/santiago0071/SkillDocker/releases)
 [![License: MIT / Open-Core](https://img.shields.io/badge/License-MIT%20%7C%20Open--Core-emerald.svg)](LICENSE)
@@ -15,53 +15,53 @@
 
 ---
 
-## 📖 核心初衷与设计哲学 / Philosophy & Problem Statement
+## 📖 这个工具解决什么实际问题？ / Problem Statement
 
-在当前智能体开发日常中，开发者往往在本地积累了数十乃至上百个技能规约与提示词规则（分布在 `~/.gemini`、`~/.claude`、`~/.codex`、`.cursorrules` 等各个目录）。然而在实际协作中，开发者常面临两个真实的工程痛点：
+日常用多个 AI 编程工具（比如 Claude Code、Google Antigravity、Codex、Cursor）时，本地往往积累了大量规约和提示词文件，散落在各个深层隐藏目录里（`~/.claude`、`~/.gemini`、`~/.codex`、`.cursorrules`）。在日常写代码中，常常有两个非常烦人的实际痛点：
 
-In modern AI agent workflows, developers routinely accumulate dozens or hundreds of skills, rule files, and prompt directives across diverse tools (`~/.gemini`, `~/.claude`, `~/.codex`, `.cursorrules`). In day-to-day work, two distinct frictions emerge:
+When working with multiple AI coding tools (Claude Code, Antigravity, Codex, Cursor), developers end up with dozens of rule files scattered across hidden dot-directories. Two real headaches constantly happen:
 
-1. **盲区与碎片化 (Invisible & Fragmented Assets)**：
-   规约文件分散在多层文件树中。没有统一的可视化面板，开发者极易遗忘当前有哪些规则在生效，各技能之间是否存在行为重叠或逻辑冲突。
-   *Skills are scattered deep inside disparate dot-directories. Without visual inspection, it is difficult to maintain situational awareness of which directives are active.*
+1. **看不见、记不清 (散落在深层目录，无法全局感知)**：
+   规约文件藏在不同的文件夹里。开工时根本记不清当前到底有哪些规则在生效，不同的规则之间会不会相互冲突。
+   *Rules are buried in different directories. It is hard to see what guidelines are currently active and whether they contradict each other.*
 
-2. **临时指令与沉淀规约的鸿沟 (Ephemeral Prompts vs. Permanent Policies)**：
-   我们在会话中反复向 Agent 叮嘱“不要修改某个模块”、“按照特定风格编码”，这些临时提示词一旦会话结束或上下文被压缩后即告丢失；而手动打开编辑器修改对应配置文件又存在较高的切换阻力。
-   *Chat prompts are temporary orders that disappear when conversations compact. SkillDocker provides a fast, tactile way to bridge on-the-fly steering with persistent skill assets.*
+2. **临时叮嘱容易忘，每次改文件又太麻烦 (聊天提示词 vs 长期规约)**：
+   在聊天窗口里临时叮嘱 AI“这次只改前端，不要动后端接口”，会话一刷新或上下文一压缩，AI 扭头就忘了；而如果每次都手动去翻隐藏文件夹修改规则文件，又很繁琐。
+   *Telling the AI "don't touch backend" in chat gets forgotten once context compacts. But manually digging into hidden folders to update rule files has too much friction.*
 
 ![Novice Academy Quote](assets/screenshots/novice-academy-quote.png)
 
 > *"A Prompt is a temporary order; a Skill is permanent company policy!"*  
-> *“Prompt 只是临时交代的工作指令，Skill 才是沉淀下来的企业级执行章程。”*
+> *“聊天里的 Prompt 只是随口交代的临时要求，写成文件沉淀下来的 Skill 才是长期执行的规章制度。”*
 
 ---
 
-## ✨ 核心特性 / Core Capabilities
+## ✨ 核心功能（它能帮你做什么？） / Core Capabilities
 
-### 1. 🎛️ 全生态技能资产雷达 (Visual Skill Cockpit)
-* **跨工具无感扫描**：自动探测全局与项目工作区内的技能资产（Google Antigravity、Claude Code、Codex、Cursor、Roo）。
-* **卡片式沉浸阅读**：一键查阅各 Skill 的规约详情、工具依赖、触发条件与运行状态，支持毫秒级全文检索与分类筛选。
-* **物理开关控制**：可视化切换技能挂载状态，无需手动翻找并重命名目录。
+### 1. 🎛️ 集中查看与管理多工具规则 (Skill & Rule Cockpit)
+* **自动扫描多工具规则**：自动识别本地 Claude Code、Google Antigravity、Codex 和 Cursor 项目里的规则与技能文件，集中展示。
+* **卡片式阅读与搜索**：不用手动翻隐藏目录，所有规则用清晰卡片呈现，支持毫秒级全文检索与分类筛选。
+* **一键开关**：点击按钮即可启用或停用某条规则，软件自动在后台切换，无需手动重命名文件。
 
-### 2. ⚡ 跨工具通用指令热注入 (Universal Directive Hot-Injector)
-* **全局快捷键一键唤醒**：在任何编程界面按下 `Alt + Space`（macOS 为 `Option + Space`），即刻呼出极简悬浮面板。
-* **就地输入与同步编译**：输入自然语言微调指令（如“本次修复聚焦于模块 A，严禁变动公网接口”），后台自动安全同步至对应 Agent 的规则上下文，实现轻量级敏捷调控。
+### 2. ⚡ 随时呼出输入框，为 AI 追加临时要求 (Quick Directive Injector)
+* **全局快捷键一键唤醒**：在写代码的任何时候按下 `Alt + Space`（macOS 为 `Option + Space`），立即呼出轻量小面板。
+* **打一句白话，自动同步生效**：随手输入一句要求（例如“本次专注修复 bug，严禁改动任何公共接口”），软件自动把要求同步给当前 AI，防止 AI 上下文压缩后遗忘。
 
-### 3. 🎨 极客审美：赛博暗黑 HUD 与 Win98 怀旧皮肤 (Adaptive Themes)
-* **Dark HUD 驾驶舱**：高对比度、沉浸式赛博朋克极客暗黑风，信息层级清晰明了。
-* **SkillDocker 98 怀旧皮肤**：完整致敬经典的 Windows 98 灰白立体倒角、经典点阵图标与状态栏，给日常开发注入一份复古浪漫。
+### 3. 🎨 两种主题风格：极客暗黑与 Win98 怀旧复古 (Adaptive Themes)
+* **赛博暗黑驾驶舱**：高对比度、清晰直观的现代极客暗黑界面。
+* **Windows 98 复古皮肤**：完整还原经典的灰白立体边框、复古像素图标与状态栏，给日常编程换个心情。
 
 ![SkillDocker 98 Retro Nostalgic Skin](assets/screenshots/skin-win98-retro.png)
 
-### 4. 🛠️ Skill Forge 技能工坊 (Visual Studio)
-* **乐高积木拼装**：将指令、约束规则、触发条件模块化拼装。
-* **自主模型接入 (BYOK)**：支持通过自定义 API Key 调用主流模型进行规约诊断与自动润色。
+### 4. 🛠️ 规则组装与编辑工坊 (Skill Forge)
+* **积木式拼接**：将角色设定、约束条件、触发词等模块化快速拼装成标准的规约文件。
+* **自带模型检查 (BYOK)**：填入自己的 API Key，即可调用大模型帮您检查规则格式是否合理并给出润色建议。
 
 ![Skill Forge Studio](assets/screenshots/skill-forge-studio.png)
 
-### 5. 🛡️ 纯本地离线优先与密码学验证 (Local-First & Offline Security)
-* **0 云端依赖**：所有文件扫描、解析与修改均在本地操作系统通过白名单路径严格执行，绝无任何常驻云端守护进程或隐私遥测回传。
-* **Ed25519 离线验签**：商业版许可证采用工业级非对称数字签名，完全在客户端本地完成离线密码学校验，授权永久有效。
+### 5. 🛡️ 纯本地离线运行，绝不上传您的代码 (100% Local-First)
+* **0 云端依赖**：所有规则扫描、读取与修改只在您的本地电脑执行，绝无任何常驻云端服务，绝不上传您的项目代码与私密提示词。
+* **离线永久使用**：商业版采用客户端本地非对称数字签名校验，断网也能永久正常使用。
 
 ---
 

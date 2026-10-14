@@ -11,7 +11,7 @@
 
 ### 1. Description（仓库一句话简介，权重最高）
 ```text
-The Visual Dock & Live Steering Hub for AI Agent Skills. A local-first, lightweight desktop HUD to discover, inspect, and hot-inject directives across Antigravity, Claude Code, Codex, and Cursor.
+A lightweight desktop floating dock to inspect, toggle, and hot-inject rules across Claude Code, Cursor, Antigravity, and Codex. 集中查看与管理多款 AI 编程工具规则的本地桌面悬浮面板。
 ```
 
 ### 2. Website（官方站点）
@@ -19,7 +19,7 @@ The Visual Dock & Live Steering Hub for AI Agent Skills. A local-first, lightwei
 https://skilldocker.com
 ```
 
-### 3. Topics（精准搜索标签矩阵，全部添加）
+### 3. Topics（精准搜索标签，全部添加）
 ```text
 ai-agents, agentic-coding, claude-code, cursor, antigravity, tauri, rust, desktop-app, developer-tools, local-first, prompt-engineering, skills
 ```
@@ -36,26 +36,27 @@ ai-agents, agentic-coding, claude-code, cursor, antigravity, tauri, rust, deskto
 
 ### Release Title
 ```text
-SkillDocker v1.0.0: The Visual Dock for AI Agent Skills (Official Debut)
+SkillDocker v1.0.0: Floating Dock for AI Coding Rules & Skills (Official Debut)
 ```
 
 ### Release Body (Markdown)
 ```markdown
 ## What is SkillDocker? / 这是什么？
 
-SkillDocker is a local-first, lightweight desktop HUD designed to bring visibility and situational awareness to your AI agent skills and directives. If you use multiple agentic tools (Google Antigravity, Claude Code, OpenAI Codex, Cursor) and have dozens of rules scattered across deep directories, SkillDocker helps you inspect and steer them from a single floating dock.
+SkillDocker is a lightweight, local-first desktop floating dock designed for developers using multiple AI coding tools (Google Antigravity, Claude Code, OpenAI Codex, Cursor). If you have dozens of rule and skill files scattered across deep hidden directories (`~/.claude`, `~/.gemini`, `.cursorrules`), SkillDocker lets you inspect, toggle, and steer them from a single floating dock.
 
-SkillDocker 是一个本地运行、离线优先的极轻量桌面控制台，专为解决多 AI 编程工具（Google Antigravity、Claude Code、Codex、Cursor）下技能规约分散、规则冲突与无法实时感知的工程痛点而设计。
+SkillDocker 是一个极轻量的本地桌面悬浮面板。日常写代码使用 Claude Code、Cursor、Google Antigravity 或 Codex 时，规约和提示词文件常常散落在各个深层隐藏目录里。SkillDocker 帮你把它们集中展示在一处，随时一键开关、随时按快捷键为当前 AI 追加临时要求。完全本地离线运行，不上传任何代码。
 
 ---
 
 ## Key Highlights in v1.0.0 / 核心能力
 
-- 🎛️ **Visual Skill Radar**: Automatically discovers and indexes active skills across `~/.gemini`, `~/.claude`, `~/.codex`, and local workspaces with zero cloud relay.
-- ⚡ **Universal Directive Hot-Injector**: Summon with `Alt + Space` (Windows) or `Option + Space` (macOS) to hot-inject natural language steering instructions into active agent context.
-- 🎨 **Adaptive Themes**: High-contrast Cyberpunk Dark HUD alongside a fully functional **Windows 98 classic nostalgic skin**.
-- 🛠️ **Skill Forge Studio**: Modular Lego-style rule assembler with BYOK (Bring Your Own Key) model diagnostics.
-- 🛡️ **Offline Ed25519 Cryptography**: 100% local-first architecture. Commercial license keys are verified offline with zero telemetry and zero cloud lock-in.
+- 🎛️ **Centralized Rule Viewer**: Automatically discovers rule and skill files across `~/.claude`, `~/.gemini`, `~/.codex`, and local workspaces without cloud relay.
+- ⚡ **Quick Directive Injector**: Press `Alt + Space` (Windows) or `Option + Space` (macOS) anywhere to quickly type a steering instruction for the active agent without digging into config files.
+- 🎨 **Modern Dark HUD & Retro Win98 Skin**: Switch between a sleek cyberpunk HUD and a fully functional nostalgic Windows 98 skin.
+- 🛠️ **Skill Forge**: Modular rule assembler with BYOK (Bring Your Own Key) model checks to craft clean skill files.
+- 🛡️ **100% Local-First & Offline**: Pure local file operations. Zero telemetry, zero cloud tracking, and offline Ed25519 verification.
+
 
 ---
 
