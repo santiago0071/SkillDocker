@@ -1,0 +1,15 @@
+#!/bin/sh
+# SkillDocker Git pre-push hook
+# Automatically runs local verification gate before any push.
+
+echo ">>> [Git Hook] Running SkillDocker local verification gate before push..."
+
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File "./scripts/verify.ps1"
+EXIT_CODE=$?
+
+if [ $EXIT_CODE -ne 0 ]; then
+    echo ">>> [Git Hook] Push aborted: local verification gate failed with exit code $EXIT_CODE." >&2
+    exit 1
+fi
+
+exit 0

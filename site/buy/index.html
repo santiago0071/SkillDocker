@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n-zh="购买 SkillDocker Pro - 官方授权" data-i18n-en="Buy SkillDocker Pro - Official Commercial License">购买 SkillDocker Pro - 官方授权</title>
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="apple-touch-icon" href="/assets/favicon.svg">
+  <link rel="stylesheet" href="/assets/site.css">
+  <script src="/buy/config.js"></script>
+  <script src="/assets/site.js" defer></script>
+  <!-- Paddle Billing (v2) Official Client-side SDK -->
+  <script src="https://cdn.paddle.com/paddle/v2/paddle.js" onerror="window.__paddleLoadError = true;"></script>
+</head>
+<body>
+  <!-- Navigation Header -->
+  <header class="site-header">
+    <div class="container nav-row">
+      <div class="brand">
+        <a href="/" class="brand-link">
+          <img src="/assets/favicon.svg" alt="SkillDocker Logo" width="28" height="28" class="brand-logo">
+          <span>SkillDocker</span>
+        </a>
+        <span class="brand-badge" data-i18n-zh="商业授权" data-i18n-en="Commercial License">商业授权</span>
+      </div>
+      <nav class="main-nav">
+        <a href="/" class="nav-link" data-i18n-zh="首页" data-i18n-en="Home">首页</a>
+        <a href="/buy/" class="nav-link" style="color:var(--accent-cyan);" data-i18n-zh="购买授权" data-i18n-en="Buy Pro">购买授权</a>
+        <button class="lang-switch" onclick="toggleLanguage()">English</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Checkout Section -->
+  <section class="section" style="border-top:none; padding-top:60px;">
+    <div class="container">
+      <div class="section-header">
+        <h1 style="font-size:36px; font-weight:800; margin-bottom:12px;" data-i18n-zh="获取 SkillDocker Pro 商业授权" data-i18n-en="Purchase SkillDocker Pro License">获取 SkillDocker Pro 商业授权</h1>
+        <p data-i18n-zh="买断授权，不过期，含自购买之日起 1 年软件版本更新" data-i18n-en="Perpetual license, does not expire, includes 1 year of software updates">买断授权，不过期，含自购买之日起 1 年软件版本更新</p>
+      </div>
+
+      <!-- Pricing Card -->
+      <div class="pricing-card">
+        <div class="pricing-header">
+          <div style="font-size:14px; color:var(--text-secondary); margin-bottom:8px;" data-i18n-zh="商业版买断授权" data-i18n-en="Commercial Pro License">商业版买断授权</div>
+          <div class="price-val" id="price-display">--</div>
+          <div class="price-sub" id="price-period" data-i18n-zh="价格由结算网关实时动态计算" data-i18n-en="Price calculated dynamically by checkout gateway">价格由结算网关实时动态计算</div>
+        </div>
+
+        <!-- Status Message Banner -->
+        <div id="checkout-notice" class="draft-banner" style="display:none;"></div>
+
+        <!-- Features Included -->
+        <ul class="feature-list">
+          <li><span class="icon-ok">✓</span> <span data-i18n-zh="【已实现】L3 触发基准测试（自动化对抗问题集与量化精准率评估）" data-i18n-en="[Implemented] L3 Trigger Benchmark (Adversarial test suite & precision metrics)">【已实现】L3 触发基准测试（自动化对抗问题集与量化精准率评估）</span></li>
+          <li><span class="icon-ok">✓</span> <span data-i18n-zh="【已实现】Skill 库 AI 全景会诊（跨 Skill 行为死锁与架构健康体检）" data-i18n-en="[Implemented] AI Library Consultation (Cross-skill deadlock & health check)">【已实现】Skill 库 AI 全景会诊（跨 Skill 行为死锁与架构健康体检）</span></li>
+          <li><span class="icon-ok">✓</span> <span data-i18n-zh="【已实现】AI 一键优化（由 AI 给出针对性优化建议，经用户确认后写入）" data-i18n-en="[Implemented] AI One-Click Optimizer (AI suggests targeted optimizations, applied upon user confirmation)">【已实现】AI 一键优化（由 AI 给出针对性优化建议，经用户确认后写入）</span></li>
+          <li style="opacity: 0.85;"><span class="icon-coming">⏳</span> <span data-i18n-zh="【即将推出】自动同步冲突合并、环境画像切换、历史版本回滚与 Token 成本精简" data-i18n-en="[Coming Soon] Auto-sync conflict merge, profiles, version history & token cost reducer">【即将推出】自动同步冲突合并、环境画像切换、历史版本回滚与 Token 成本精简</span></li>
+          <li><span class="icon-ok">✓</span> <span data-i18n-zh="纯本地非对称密码学离线验签，授权不过期" data-i18n-en="Offline Ed25519 cryptographic verification, license does not expire">纯本地非对称密码学离线验签，授权不过期</span></li>
+          <li><span class="icon-ok">✓</span> <span data-i18n-zh="包含购买之日起 1 年软件版本更新" data-i18n-en="Includes 1 year of software updates from date of purchase">包含购买之日起 1 年软件版本更新</span></li>
+          <li><span class="icon-ok">✓</span> <span data-i18n-zh="授权供购买者本人使用，可安装在购买者本人使用的多台设备上（不得转让、共享或转售）" data-i18n-en="License is for purchaser's personal use only, installable on multiple devices used by purchaser (transfer, sharing, or resale prohibited)">授权供购买者本人使用，可安装在购买者本人使用的多台设备上（不得转让、共享或转售）</span></li>
+          <li><span class="icon-ok">✓</span> <span data-i18n-zh="一年更新期满后已获版本永久可用，新版本获取政策届时公布" data-i18n-en="Versions acquired during 1-year update period remain usable perpetually; new version upgrade policy will be announced at that time">一年更新期满后已获版本永久可用，新版本获取政策届时公布</span></li>
+          <li><span class="icon-ok">✓</span> <span data-i18n-zh="通过电子邮件提供尽力答复的技术支持（不承诺响应时间，不提供电话或即时通讯支持）" data-i18n-en="Technical support provided via email with best-effort response (no guaranteed response time, no phone or IM support)">通过电子邮件提供尽力答复的技术支持（不承诺响应时间，不提供电话或即时通讯支持）</span></li>
+        </ul>
+
+        <!-- Action Button -->
+        <button id="btn-checkout" class="btn btn-primary btn-disabled" style="width:100%; font-size:16px; padding:14px;" data-i18n-zh="正在读取实时价格..." data-i18n-en="Loading live price...">正在读取实时价格...</button>
+
+        <p style="text-align:center; color:var(--text-muted); font-size:12px; margin-top:16px;" data-i18n-zh="由 Paddle 提供安全加密结账" data-i18n-en="Secure checkout powered by Paddle">由 Paddle 提供安全加密结账</p>
+      </div>
+
+      <!-- Purchase Flow Steps -->
+      <div class="card" style="max-width:840px; margin:48px auto 0;">
+        <h3 style="font-size:18px; margin-bottom:16px;" data-i18n-zh="购买后会发生什么？" data-i18n-en="What happens after purchase?">购买后会发生什么？</h3>
+        <ol style="color:var(--text-secondary); padding-left:20px; font-size:14px; line-height:1.8;">
+          <li><strong style="color:#fff;" data-i18n-zh="付款成功：" data-i18n-en="Payment Completed:">付款成功：</strong><span data-i18n-zh="在线完成安全支付后，您将收到账单与发票（收据抬头显示为 Paddle / UniPublisher）。" data-i18n-en="After completing secure payment, you will receive your receipt and invoice (billed as Paddle / UniPublisher).">在线完成安全支付后，您将收到账单与发票（收据抬头显示为 Paddle / UniPublisher）。</span></li>
+          <li><strong style="color:#fff;" data-i18n-zh="密钥发送：" data-i18n-en="License Key Delivery:">密钥发送：</strong><span data-i18n-zh="商业许可证密钥由销售方人工签发，在付款确认后 2 个工作日内通过电子邮件发送到购买时填写的邮箱。如超过 2 个工作日未收到，请先检查垃圾邮件文件夹，然后联系 support@skilldocker.com。" data-i18n-en="Commercial license keys are manually issued by the seller and delivered via email to your checkout address within 2 business days after payment confirmation. If not received after 2 business days, please check your spam folder first, then contact support@skilldocker.com.">商业许可证密钥由销售方人工签发，在付款确认后 2 个工作日内通过电子邮件发送到购买时填写的邮箱。如超过 2 个工作日未收到，请先检查垃圾邮件文件夹，然后联系 support@skilldocker.com。</span></li>
+          <li><strong style="color:#fff;" data-i18n-zh="激活使用：" data-i18n-en="Activation:">激活使用：</strong><span data-i18n-zh="启动本地安装的 SkillDocker 桌面应用，点击右上角「设置」→ 找到「SkillDocker Pro 许可证」面板，粘贴密钥并点击激活即可解锁所有 Pro 功能。" data-i18n-en="Launch your local SkillDocker desktop app, click 'Settings' -> locate the 'SkillDocker Pro License' section, paste your key and click activate to unlock all Pro capabilities.">启动本地安装的 SkillDocker 桌面应用，点击右上角「设置」→ 找到「SkillDocker Pro 许可证」面板，粘贴密钥并点击激活即可解锁所有 Pro 功能。</span></li>
+          <li><strong style="color:#fff;" data-i18n-zh="离线可用：" data-i18n-en="Offline Capable:">离线可用：</strong><span data-i18n-zh="激活验证完全在本地离线执行，后续使用无需连接任何授权校验服务器。" data-i18n-en="License validation runs entirely offline on your computer with zero dependency on online verification servers.">激活验证完全在本地离线执行，后续使用无需连接任何授权校验服务器。</span></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="/" data-i18n-zh="首页" data-i18n-en="Home">首页</a>
+        <a href="/buy/" data-i18n-zh="购买授权" data-i18n-en="Buy Pro">购买授权</a>
+        <a href="/terms/" data-i18n-zh="服务条款" data-i18n-en="Terms of Service">服务条款</a>
+        <a href="/refund/" data-i18n-zh="退款政策" data-i18n-en="Refund Policy">退款政策</a>
+        <a href="/privacy/" data-i18n-zh="隐私政策" data-i18n-en="Privacy Policy">隐私政策</a>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 SkillDocker by UniPublisher. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Paddle Billing Checkout Integration Script -->
+  <script>
+    (function() {
+      'use strict';
+      var priceDisplay = document.getElementById('price-display');
+      var pricePeriod = document.getElementById('price-period');
+      var checkoutBtn = document.getElementById('btn-checkout');
+      var noticeBox = document.getElementById('checkout-notice');
+
+      var checkoutState = {
+        status: 'loading', // 'loading' | 'unconfigured' | 'script_error' | 'fetch_error' | 'ready'
+        formattedPrice: '',
+        originalPrice: '',
+        hasDiscount: false,
+        errorZh: '',
+        errorEn: ''
+      };
+
+      function renderState(lang) {
+        lang = lang || (window.getSiteLanguage ? window.getSiteLanguage() : (document.documentElement.lang || 'zh'));
+        var isEn = lang === 'en';
+
+        if (checkoutState.status === 'loading') {
+          priceDisplay.textContent = '--';
+          priceDisplay.setAttribute('data-i18n-zh', '--');
+          priceDisplay.setAttribute('data-i18n-en', '--');
+
+          var periodZh = '正在读取实时价格...';
+          var periodEn = 'Loading live price...';
+          pricePeriod.textContent = isEn ? periodEn : periodZh;
+          pricePeriod.setAttribute('data-i18n-zh', periodZh);
+          pricePeriod.setAttribute('data-i18n-en', periodEn);
+
+          var btnZh = '正在读取实时价格...';
+          var btnEn = 'Loading live price...';
+          checkoutBtn.classList.add('btn-disabled');
+          checkoutBtn.textContent = isEn ? btnEn : btnZh;
+          checkoutBtn.setAttribute('data-i18n-zh', btnZh);
+          checkoutBtn.setAttribute('data-i18n-en', btnEn);
+          checkoutBtn.onclick = null;
+
+          noticeBox.style.display = 'none';
+          noticeBox.textContent = '';
+          noticeBox.removeAttribute('data-i18n-zh');
+          noticeBox.removeAttribute('data-i18n-en');
+        } else if (checkoutState.status === 'unconfigured') {
+          priceDisplay.textContent = isEn ? 'Pending' : '待开放';
+          priceDisplay.setAttribute('data-i18n-zh', '待开放');
+          priceDisplay.setAttribute('data-i18n-en', 'Pending');
+
+          var periodZh = '正式环境配置尚未就绪，购买通道暂未开放';
+          var periodEn = 'Live checkout configuration pending, sales not open yet';
+          pricePeriod.textContent = isEn ? periodEn : periodZh;
+          pricePeriod.setAttribute('data-i18n-zh', periodZh);
+          pricePeriod.setAttribute('data-i18n-en', periodEn);
+
+          var btnZh = '尚未开放购买';
+          var btnEn = 'Sales Not Open Yet';
+          checkoutBtn.classList.add('btn-disabled');
+          checkoutBtn.textContent = isEn ? btnEn : btnZh;
+          checkoutBtn.setAttribute('data-i18n-zh', btnZh);
+          checkoutBtn.setAttribute('data-i18n-en', btnEn);
+          checkoutBtn.onclick = null;
+
+          var noticeZh = '正式环境要求域名先通过 Paddle 审核。当前配置尚未填写，购买通道暂未开放。其余页面正常浏览。';
+          var noticeEn = 'Paddle requires domain verification before launch. Configuration is pending; sales are not yet open. All other pages remain browsable.';
+          noticeBox.style.display = 'block';
+          noticeBox.style.borderColor = 'rgba(245, 158, 11, 0.3)';
+          noticeBox.style.color = 'var(--accent-amber)';
+          noticeBox.style.background = 'rgba(245, 158, 11, 0.1)';
+          noticeBox.textContent = isEn ? noticeEn : noticeZh;
+          noticeBox.setAttribute('data-i18n-zh', noticeZh);
+          noticeBox.setAttribute('data-i18n-en', noticeEn);
+        } else if (checkoutState.status === 'script_error') {
+          priceDisplay.textContent = isEn ? 'Unavailable' : '无法加载';
+          priceDisplay.setAttribute('data-i18n-zh', '无法加载');
+          priceDisplay.setAttribute('data-i18n-en', 'Unavailable');
+
+          var periodZh = '支付网关脚本加载失败，请检查网络连接';
+          var periodEn = 'Payment gateway script failed to load. Please check your network connection.';
+          pricePeriod.textContent = isEn ? periodEn : periodZh;
+          pricePeriod.setAttribute('data-i18n-zh', periodZh);
+          pricePeriod.setAttribute('data-i18n-en', periodEn);
+
+          var btnZh = '暂时无法购买';
+          var btnEn = 'Unavailable';
+          checkoutBtn.classList.add('btn-disabled');
+          checkoutBtn.textContent = isEn ? btnEn : btnZh;
+          checkoutBtn.setAttribute('data-i18n-zh', btnZh);
+          checkoutBtn.setAttribute('data-i18n-en', btnEn);
+          checkoutBtn.onclick = null;
+
+          var noticeZh = checkoutState.errorZh || 'Paddle 支付组件加载失败（请检查网络连接）。当前无法购买。';
+          var noticeEn = checkoutState.errorEn || 'Paddle payment component failed to load (please check network connection). Checkout is currently unavailable.';
+          noticeBox.style.display = 'block';
+          noticeBox.style.borderColor = 'rgba(244, 63, 94, 0.4)';
+          noticeBox.style.color = '#fecdd3';
+          noticeBox.style.background = 'rgba(244, 63, 94, 0.1)';
+          noticeBox.textContent = isEn ? noticeEn : noticeZh;
+          noticeBox.setAttribute('data-i18n-zh', noticeZh);
+          noticeBox.setAttribute('data-i18n-en', noticeEn);
+        } else if (checkoutState.status === 'fetch_error') {
+          priceDisplay.textContent = isEn ? 'Unavailable' : '无法获取';
+          priceDisplay.setAttribute('data-i18n-zh', '无法获取');
+          priceDisplay.setAttribute('data-i18n-en', 'Unavailable');
+
+          var periodZh = '未能获取到商品价格信息';
+          var periodEn = 'Failed to retrieve product pricing from gateway';
+          pricePeriod.textContent = isEn ? periodEn : periodZh;
+          pricePeriod.setAttribute('data-i18n-zh', periodZh);
+          pricePeriod.setAttribute('data-i18n-en', periodEn);
+
+          var btnZh = '暂时无法购买';
+          var btnEn = 'Unavailable';
+          checkoutBtn.classList.add('btn-disabled');
+          checkoutBtn.textContent = isEn ? btnEn : btnZh;
+          checkoutBtn.setAttribute('data-i18n-zh', btnZh);
+          checkoutBtn.setAttribute('data-i18n-en', btnEn);
+          checkoutBtn.onclick = null;
+
+          var noticeZh = checkoutState.errorZh || '获取商品价格失败，当前无法购买。';
+          var noticeEn = checkoutState.errorEn || 'Failed to fetch price from payment gateway. Checkout is currently unavailable.';
+          noticeBox.style.display = 'block';
+          noticeBox.style.borderColor = 'rgba(244, 63, 94, 0.4)';
+          noticeBox.style.color = '#fecdd3';
+          noticeBox.style.background = 'rgba(244, 63, 94, 0.1)';
+          noticeBox.textContent = isEn ? noticeEn : noticeZh;
+          noticeBox.setAttribute('data-i18n-zh', noticeZh);
+          noticeBox.setAttribute('data-i18n-en', noticeEn);
+        } else if (checkoutState.status === 'ready') {
+          if (checkoutState.hasDiscount && checkoutState.originalPrice) {
+            priceDisplay.innerHTML = '<span style="font-size:22px; text-decoration:line-through; color:var(--text-muted); margin-right:10px; font-weight:normal;">' + checkoutState.originalPrice + '</span>' + checkoutState.formattedPrice;
+            var periodZh = '🎁 首发早鸟 7 折特惠（已立减 30%），买断授权不过期';
+            var periodEn = '🎁 Launch Special 30% OFF (Perpetual license, does not expire)';
+            pricePeriod.textContent = isEn ? periodEn : periodZh;
+            pricePeriod.setAttribute('data-i18n-zh', periodZh);
+            pricePeriod.setAttribute('data-i18n-en', periodEn);
+          } else {
+            priceDisplay.textContent = checkoutState.formattedPrice;
+            priceDisplay.setAttribute('data-i18n-zh', checkoutState.formattedPrice);
+            priceDisplay.setAttribute('data-i18n-en', checkoutState.formattedPrice);
+
+            var periodZh = '买断授权（含自购买之日起 1 年软件版本更新）';
+            var periodEn = 'Perpetual license (includes 1 year of software updates from date of purchase)';
+            pricePeriod.textContent = isEn ? periodEn : periodZh;
+            pricePeriod.setAttribute('data-i18n-zh', periodZh);
+            pricePeriod.setAttribute('data-i18n-en', periodEn);
+          }
+
+          var btnZh = '立即获取 Pro 授权';
+          var btnEn = 'Buy Pro License Now';
+          checkoutBtn.classList.remove('btn-disabled');
+          checkoutBtn.textContent = isEn ? btnEn : btnZh;
+          checkoutBtn.setAttribute('data-i18n-zh', btnZh);
+          checkoutBtn.setAttribute('data-i18n-en', btnEn);
+
+          checkoutBtn.onclick = function() {
+            var config = window.SKILLDOCKER_CONFIG || {};
+            var pId = (config.paddlePriceId || '').trim();
+            var dId = (config.paddleDiscountId || '').trim();
+            if (pId && typeof Paddle !== 'undefined') {
+              var checkoutOpts = {
+                items: [{ priceId: pId, quantity: 1 }]
+              };
+              if (dId) {
+                checkoutOpts.discountId = dId;
+              }
+              Paddle.Checkout.open(checkoutOpts);
+            }
+          };
+
+          noticeBox.style.display = 'none';
+          noticeBox.textContent = '';
+          noticeBox.removeAttribute('data-i18n-zh');
+          noticeBox.removeAttribute('data-i18n-en');
+        }
+      }
+
+      window.addEventListener('site:languagechange', function(e) {
+        renderState(e.detail ? e.detail.lang : null);
+      });
+
+      function initCheckout() {
+        var config = window.SKILLDOCKER_CONFIG || {};
+        var token = (config.paddleClientToken || '').trim();
+        var priceId = (config.paddlePriceId || '').trim();
+
+        // Check if Paddle.js failed to load
+        if (window.__paddleLoadError || typeof Paddle === 'undefined') {
+          checkoutState.status = 'script_error';
+          renderState();
+          return;
+        }
+
+        // Case A: Tokens are blank (pre-launch / pending domain verification)
+        if (!token || !priceId) {
+          checkoutState.status = 'unconfigured';
+          renderState();
+          return;
+        }
+
+        // Case B: Tokens are configured -> Initialize Paddle Billing (Live environment)
+        // Note: For Default Payment Links, Paddle.js automatically recognizes the '_ptxn' query parameter
+        // in the URL upon initialization and opens the overlay checkout as per official documentation.
+        try {
+          Paddle.Initialize({
+            token: token
+          });
+        } catch (e) {
+          checkoutState.status = 'script_error';
+          checkoutState.errorZh = 'Paddle 初始化失败: ' + (e.message || String(e));
+          checkoutState.errorEn = 'Paddle initialization failed: ' + (e.message || String(e));
+          renderState();
+          return;
+        }
+
+        var previewOpts = {
+          items: [{ priceId: priceId, quantity: 1 }]
+        };
+        var discountId = (config.paddleDiscountId || '').trim();
+        if (discountId) {
+          previewOpts.discountId = discountId;
+        }
+
+        // Dynamic price retrieval via Paddle.PricePreview
+        Paddle.PricePreview(previewOpts).then(function(preview) {
+          var details = preview.data && preview.data.details;
+          var item = details && details.lineItems && details.lineItems[0];
+          var formatted = item && item.formattedTotals && item.formattedTotals.total;
+
+          if (formatted) {
+            checkoutState.status = 'ready';
+            checkoutState.formattedPrice = formatted;
+
+            var discounts = item.discounts || [];
+            if (discounts.length > 0 && item.formattedTotals.discount && item.formattedTotals.discount !== '$0.00') {
+              checkoutState.hasDiscount = true;
+              var origUnit = item.price && item.price.unitPrice;
+              if (origUnit && origUnit.amount) {
+                var sym = (origUnit.currencyCode === 'USD' || !origUnit.currencyCode) ? '$' : origUnit.currencyCode + ' ';
+                checkoutState.originalPrice = sym + (Number(origUnit.amount) / 100).toFixed(2);
+              }
+            }
+
+            renderState();
+          } else {
+            checkoutState.status = 'fetch_error';
+            checkoutState.errorZh = '未能成功解析结算网关返回的价格数据';
+            checkoutState.errorEn = 'Failed to parse price data returned by payment gateway.';
+            renderState();
+          }
+        }).catch(function(err) {
+          checkoutState.status = 'fetch_error';
+          checkoutState.errorZh = '获取商品价格失败（' + (err.message || '网络连接或配置异常') + '），当前无法购买。';
+          checkoutState.errorEn = 'Failed to fetch price from payment gateway (' + (err.message || 'network or config issue') + '). Checkout is currently unavailable.';
+          renderState();
+        });
+      }
+
+      document.addEventListener('DOMContentLoaded', initCheckout);
+    })();
+  </script>
+</body>
+</html>

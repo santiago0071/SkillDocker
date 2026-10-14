@@ -1,0 +1,80 @@
+<!-- 由项目所有者于 2026-10-13 确认的内容填入 -->
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n-zh="隐私政策 - SkillDocker" data-i18n-en="Privacy Policy - SkillDocker">隐私政策 - SkillDocker</title>
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="apple-touch-icon" href="/assets/favicon.svg">
+  <link rel="stylesheet" href="/assets/site.css">
+  <script src="/buy/config.js"></script>
+  <script src="/assets/site.js" defer></script>
+</head>
+<body>
+  <!-- Navigation Header -->
+  <header class="site-header">
+    <div class="container nav-row">
+      <div class="brand">
+        <a href="/" class="brand-link">
+          <img src="/assets/favicon.svg" alt="SkillDocker Logo" width="28" height="28" class="brand-logo">
+          <span>SkillDocker</span>
+        </a>
+        <span class="brand-badge" data-i18n-zh="隐私与数据安全" data-i18n-en="Privacy & Security">隐私与数据安全</span>
+      </div>
+      <nav class="main-nav">
+        <a href="/" class="nav-link" data-i18n-zh="首页" data-i18n-en="Home">首页</a>
+        <a href="/buy/" class="nav-link" data-i18n-zh="购买授权" data-i18n-en="Buy Pro">购买授权</a>
+        <button class="lang-switch" onclick="toggleLanguage()">English</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Content Section -->
+  <section class="section" style="border-top:none; padding-top:48px;">
+    <div class="container prose">
+      <h1 data-i18n-zh="SkillDocker 隐私政策" data-i18n-en="SkillDocker Privacy Policy">SkillDocker 隐私政策</h1>
+      <div class="meta-text">
+        <span data-i18n-zh="本政策自发布之日起生效 | 最后更新：2026 年 10 月 13 日 | 架构原则：本地优先 (Local-First)，零云端中转" data-i18n-en="Effective upon publication | Last updated: October 13, 2026 | Principle: Local-First, Zero Cloud Relay">本政策自发布之日起生效 | 最后更新：2026 年 10 月 13 日 | 架构原则：本地优先 (Local-First)，零云端中转</span>
+      </div>
+
+      <h2 data-i18n-zh="1. 核心架构与隐私承诺" data-i18n-en="1. Core Architecture & Commitments">1. 核心架构与隐私承诺</h2>
+      <p data-i18n-zh="SkillDocker 客户端遵从「本地优先 (Local-First)」与「数据不出本地」的安全设计原则：" data-i18n-en="SkillDocker is built upon Local-First principles with data staying on your local machine:">SkillDocker 客户端遵从「本地优先 (Local-First)」与「数据不出本地」的安全设计原则：</p>
+      <ul>
+        <li><strong data-i18n-zh="代码与规则零上传：" data-i18n-en="Zero Source Code Uploads: ">代码与规则零上传：</strong><span data-i18n-zh="SkillDocker 客户端不会向我们或任何第三方托管服务器上传您的项目源代码、工程规则文件（CLAUDE.md、.cursorrules 等）或本地 Skill 内容。" data-i18n-en="SkillDocker client never uploads your source code, project rules, or local skill files to our servers or third-party cloud relays.">SkillDocker 客户端不会向我们或任何第三方托管服务器上传您的项目源代码、工程规则文件（CLAUDE.md、.cursorrules 等）或本地 Skill 内容。</span></li>
+        <li><strong data-i18n-zh="BYOK 零中转直连：" data-i18n-en="Direct BYOK Connections: ">BYOK 零中转直连：</strong><span data-i18n-zh="当您在客户端配置大模型 API Key（用于 AI 会诊或优化）时，API Key 仅安全保存在您本地操作系统的钥匙串/密钥环中。调用时由本地客户端直接向模型供应商（如 Anthropic、Google 等）官方接口发起 HTTPS 通信，不经过 SkillDocker 的任何中转代理。" data-i18n-en="When you configure an LLM API key, it is stored securely in your OS keychain. Requests are sent directly from your computer to official model APIs over HTTPS with zero intermediary servers.">当您在客户端配置大模型 API Key（用于 AI 会诊或优化）时，API Key 仅安全保存在您本地操作系统的钥匙串/密钥环中。调用时由本地客户端直接向模型供应商（如 Anthropic、Google 等）官方接口发起 HTTPS 通信，不经过 SkillDocker 的任何中转代理。</span></li>
+        <li><strong data-i18n-zh="离线密码学校验：" data-i18n-en="Offline Cryptographic Verification: ">离线密码学校验：</strong><span data-i18n-zh="商业版许可证采用 Ed25519 签名算法在您本机完全离线进行验证，不需要在线定期汇报心跳或上传机器指纹。" data-i18n-en="Pro license verification executes 100% offline via embedded Ed25519 public keys, requiring no telemetry heartbeats or device fingerprint tracking.">商业版许可证采用 Ed25519 签名算法在您本机完全离线进行验证，不需要在线定期汇报心跳或上传机器指纹。</span></li>
+      </ul>
+
+      <h2 data-i18n-zh="2. 支付与交易数据处理" data-i18n-en="2. Payment & Transaction Data">2. 支付与交易数据处理</h2>
+      <p data-i18n-zh="当您在线购买 SkillDocker Pro 授权时，结账过程由支付服务商 Paddle.com 统一承接。Paddle 将收集完成交易所必需的账单信息（如邮箱地址、支付信息、IP 地址与国家/地区）。SkillDocker 开发者不触碰、不存储您的信用卡卡号或支付凭证。在订单交付（人工签发密钥）与售后支持环节，仅依据 Paddle 交易记录（交易号、购买邮箱及所选版本）进行处理。" data-i18n-en="When you purchase a SkillDocker Pro license online, checkout is handled directly by Paddle.com. Paddle collects billing data necessary to complete the transaction (such as email address, payment details, IP address, and country). SkillDocker developers never handle or store your payment card numbers. Order fulfillment (manual license key delivery) and customer support are processed using transaction records from Paddle (transaction ID, email, and tier).">当您在线购买 SkillDocker Pro 授权时，结账过程由支付服务商 Paddle.com 统一承接。Paddle 将收集完成交易所必需的账单信息（如邮箱地址、支付信息、IP 地址与国家/地区）。SkillDocker 开发者不触碰、不存储您的信用卡卡号或支付凭证。在订单交付（人工签发密钥）与售后支持环节，仅依据 Paddle 交易记录（交易号、购买邮箱及所选版本）进行处理。</p>
+
+      <h2 data-i18n-zh="3. 本地日志与诊断信息" data-i18n-en="3. Local Logs & Diagnostics">3. 本地日志与诊断信息</h2>
+      <p data-i18n-zh="为了便于本地调试与错误排查，客户端可能在本地计算机的数据目录中记录运行时日志（日志已做敏感信息自动脱敏处理，API Key 与密钥会被自动截断打码）。所有日志严格保存在本地，软件绝不会在后台静默自动上传日志文件。" data-i18n-en="For local troubleshooting, the desktop client may write operational logs to your local app data directory (with automatic sanitization of API keys and tokens). Logs reside strictly on your machine and are never automatically transmitted in the background.">为了便于本地调试与错误排查，客户端可能在本地计算机的数据目录中记录运行时日志（日志已做敏感信息自动脱敏处理，API Key 与密钥会被自动截断打码）。所有日志严格保存在本地，软件绝不会在后台静默自动上传日志文件。</p>
+
+      <h2 data-i18n-zh="4. 数据的留存与权利" data-i18n-en="4. Data Retention & User Rights">4. 数据的留存与权利</h2>
+      <p data-i18n-zh="因为 SkillDocker 不在云端集中存储您的用户数据，删除本地数据仅需通过常规卸载软件并清理本地配置目录即可完全清除。关于在 Paddle 处留存的交易发票记录，您可以根据 GDPR、CCPA 或相关法律行使查阅与更正权利。" data-i18n-en="Because SkillDocker does not store user data in cloud servers, deleting your data is as simple as uninstalling the application and removing the local directory. For transaction receipts stored by Paddle, you may exercise your rights under GDPR, CCPA, or applicable regulations.">因为 SkillDocker 不在云端集中存储您的用户数据，删除本地数据仅需通过常规卸载软件并清理本地配置目录即可完全清除。关于在 Paddle 处留存的交易发票记录，您可以根据 GDPR、CCPA 或相关法律行使查阅与更正权利。</p>
+
+      <h2 data-i18n-zh="5. 隐私事宜联络" data-i18n-en="5. Privacy Contact">5. 隐私事宜联络</h2>
+      <p data-i18n-zh="如对本隐私政策或个人数据处理有任何疑问，请联系：support@skilldocker.com" data-i18n-en="If you have questions regarding this Privacy Policy, please contact: support@skilldocker.com">如对本隐私政策或个人数据处理有任何疑问，请联系：support@skilldocker.com</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="/" data-i18n-zh="首页" data-i18n-en="Home">首页</a>
+        <a href="/buy/" data-i18n-zh="购买授权" data-i18n-en="Buy Pro">购买授权</a>
+        <a href="/terms/" data-i18n-zh="服务条款" data-i18n-en="Terms of Service">服务条款</a>
+        <a href="/refund/" data-i18n-zh="退款政策" data-i18n-en="Refund Policy">退款政策</a>
+        <a href="/privacy/" data-i18n-zh="隐私政策" data-i18n-en="Privacy Policy">隐私政策</a>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 SkillDocker by UniPublisher. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,57 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Rust / Tauri
+src-tauri/target/
+src-tauri/Cargo.lock
+
+# Build outputs
+dist/
+dist-ssr/
+build/
+*.local
+
+# Environment & Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Editor & OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Binaries, Installers & Temp scripts
+vs_BuildTools.exe
+*.exe
+*.msi
+test.ps1
+
+# Local Backups & Runtime storage
+.skilldock/backups/
+*.bak
+.gemini/
+.agents/
+.claude/
+
+# License issuer keys (never commit; default location is ~/.skilldocker-license-keys)
+scripts/.license-keys/
+.skilldocker-license-keys/
+*.pem

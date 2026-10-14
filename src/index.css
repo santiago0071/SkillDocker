@@ -1,0 +1,3924 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    color: #f3f4f6;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(15, 17, 23, 0.5);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Typora / Notion-grade Reader Typography */
+.markdown-reader {
+  color: #e2e8f0;
+  line-height: 1.75;
+  font-size: 0.875rem;
+}
+
+.markdown-reader h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid rgba(75, 85, 99, 0.4);
+}
+
+.markdown-reader h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #f1f5f9;
+  margin-top: 1.4rem;
+  margin-bottom: 0.6rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid rgba(75, 85, 99, 0.25);
+}
+
+.markdown-reader h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #c7d2fe;
+  margin-top: 1.2rem;
+  margin-bottom: 0.4rem;
+}
+
+.markdown-reader h4 {
+  font-size: 0.925rem;
+  font-weight: 600;
+  color: #a5b4fc;
+  margin-top: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+.markdown-reader p {
+  margin-top: 0.5rem;
+  margin-bottom: 0.75rem;
+  color: #cbd5e1;
+}
+
+.markdown-reader ul {
+  list-style-type: disc;
+  padding-left: 1.4rem;
+  margin-top: 0.4rem;
+  margin-bottom: 0.8rem;
+}
+
+.markdown-reader ol {
+  list-style-type: decimal;
+  padding-left: 1.4rem;
+  margin-top: 0.4rem;
+  margin-bottom: 0.8rem;
+}
+
+.markdown-reader li {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  color: #cbd5e1;
+}
+
+.markdown-reader blockquote {
+  border-left: 3px solid #6366f1;
+  background: rgba(99, 102, 241, 0.08);
+  padding: 0.6rem 1rem;
+  margin: 0.8rem 0;
+  border-radius: 0 0.5rem 0.5rem 0;
+  color: #c7d2fe;
+  font-size: 0.825rem;
+}
+
+.markdown-reader blockquote p {
+  margin: 0;
+  color: #cbd5e1;
+}
+
+.markdown-reader code:not(pre code) {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.8rem;
+  background-color: rgba(30, 41, 59, 0.85);
+  color: #93c5fd;
+  padding: 0.15rem 0.35rem;
+  border-radius: 0.3rem;
+  border: 1px solid rgba(71, 85, 105, 0.4);
+}
+
+.markdown-reader pre {
+  background-color: #0c0e15;
+  border: 1px solid rgba(75, 85, 99, 0.4);
+  border-radius: 0.6rem;
+  padding: 0.85rem 1rem;
+  overflow-x: auto;
+  margin: 0.85rem 0;
+}
+
+.markdown-reader pre code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.8rem;
+  color: #e2e8f0;
+  line-height: 1.6;
+}
+
+.markdown-reader table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.9rem 0;
+  font-size: 0.825rem;
+}
+
+.markdown-reader th {
+  background-color: rgba(30, 41, 59, 0.7);
+  color: #f8fafc;
+  font-weight: 600;
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid rgba(71, 85, 105, 0.5);
+}
+
+.markdown-reader td {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid rgba(71, 85, 105, 0.3);
+  color: #cbd5e1;
+}
+
+.markdown-reader tr:nth-child(even) {
+  background-color: rgba(15, 23, 42, 0.4);
+}
+
+.markdown-reader hr {
+  border: none;
+  border-top: 1px solid rgba(75, 85, 99, 0.4);
+  margin: 1.5rem 0;
+}
+
+.markdown-reader strong,
+.markdown-reader b {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.markdown-reader a {
+  color: #818cf8;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.markdown-reader a:hover {
+  color: #a5b4fc;
+}
+
+/* Glassmorphism & Cyberpunk Raycast Design Utilities */
+.glass-panel {
+  background: rgba(14, 17, 26, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card {
+  background: linear-gradient(180deg, rgba(18, 21, 34, 0.8) 0%, rgba(12, 14, 24, 0.9) 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.glass-card:hover {
+  border-color: rgba(99, 102, 241, 0.35);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+/* Ecosystem Accent Hover Glows */
+.glow-gemini:hover {
+  border-color: rgba(168, 85, 247, 0.45);
+  box-shadow: 0 0 20px -3px rgba(168, 85, 247, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.glow-claude:hover {
+  border-color: rgba(245, 158, 11, 0.45);
+  box-shadow: 0 0 20px -3px rgba(245, 158, 11, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.glow-codex:hover {
+  border-color: rgba(16, 185, 129, 0.45);
+  box-shadow: 0 0 20px -3px rgba(16, 185, 129, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.glow-agents:hover {
+  border-color: rgba(59, 130, 246, 0.45);
+  box-shadow: 0 0 20px -3px rgba(59, 130, 246, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* Draggable Split Resizer Bar */
+.resizer-bar-vertical {
+  width: 5px;
+  cursor: col-resize;
+  position: relative;
+  transition: background-color 0.15s ease;
+  user-select: none;
+  -webkit-user-select: none;
+  flex-shrink: 0;
+  z-index: 30;
+}
+
+.resizer-bar-vertical:hover,
+.resizer-bar-vertical.is-dragging {
+  background-color: rgba(99, 102, 241, 0.6);
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+}
+
+.resizer-bar-vertical::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 2px;
+  height: 24px;
+  border-radius: 9999px;
+  background-color: rgba(255, 255, 255, 0.2);
+  transition: all 0.15s ease;
+}
+
+.resizer-bar-vertical:hover::after,
+.resizer-bar-vertical.is-dragging::after {
+  height: 36px;
+  background-color: #ffffff;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
+}
+
+/* ========================================================================= */
+/* THEME: LIGHT (Notion / Linear / macOS Silver-White Minimalist Design)     */
+/* ========================================================================= */
+
+.theme-light {
+  color-scheme: light;
+  background-color: #f6f8fb !important;
+  color: #1e293b !important;
+}
+
+/* Light Scrollbars */
+.theme-light ::-webkit-scrollbar-track {
+  background: rgba(226, 232, 240, 0.6);
+}
+.theme-light ::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.5);
+  border-radius: 4px;
+}
+.theme-light ::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.7);
+}
+
+/* Light Glassmorphism Containers & Cards */
+.theme-light .glass-panel {
+  background: rgba(255, 255, 255, 0.94) !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.06) !important;
+}
+
+.theme-light .glass-card {
+  background: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05), 0 4px 12px rgba(15, 23, 42, 0.03) !important;
+}
+
+.theme-light .glass-card:hover {
+  border-color: rgba(99, 102, 241, 0.5) !important;
+  box-shadow: 0 8px 24px -4px rgba(99, 102, 241, 0.12), 0 2px 6px rgba(15, 23, 42, 0.04) !important;
+}
+
+/* Structural Layout: Header, Sidebar, Stage in Light Mode */
+.theme-light header {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.theme-light aside {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+
+.theme-light main {
+  background-color: #f1f5f9 !important;
+}
+
+/* Resizer Handle in Light Mode */
+.theme-light .resizer-bar-vertical {
+  background-color: transparent;
+}
+.theme-light .resizer-bar-vertical::after {
+  background-color: rgba(148, 163, 184, 0.6);
+}
+.theme-light .resizer-bar-vertical:hover,
+.theme-light .resizer-bar-vertical.is-dragging {
+  background-color: rgba(99, 102, 241, 0.3);
+  box-shadow: 0 0 8px rgba(99, 102, 241, 0.3);
+}
+.theme-light .resizer-bar-vertical:hover::after,
+.theme-light .resizer-bar-vertical.is-dragging::after {
+  background-color: #6366f1;
+  box-shadow: 0 0 6px rgba(99, 102, 241, 0.6);
+}
+
+/* ==========================================================================
+   Comprehensive Light Theme Overrides (Clean, Crisp, High-Contrast)
+   ========================================================================== */
+
+/* 1. Modal Backdrop in Light Mode - Soft frosted slate focus overlay */
+.theme-light div[class*="fixed"][class*="inset-0"][class*="bg-black"] {
+  background-color: rgba(15, 23, 42, 0.45) !important;
+  backdrop-filter: blur(8px) !important;
+}
+
+/* 2. Overrides for ALL Hardcoded Dark Background Hex Classes */
+.theme-light .bg-\[\#07090f\],
+.theme-light .bg-\[\#07090f\]\/60,
+.theme-light .bg-\[\#08090f\],
+.theme-light .bg-\[\#080911\],
+.theme-light .bg-\[\#090a12\],
+.theme-light .bg-\[\#090b11\],
+.theme-light .bg-\[\#090b12\],
+.theme-light .bg-\[\#090b14\],
+.theme-light .bg-\[\#090b14\]\/70,
+.theme-light .bg-\[\#0a0c13\],
+.theme-light .bg-\[\#0a0c14\],
+.theme-light .bg-\[\#0a0c16\],
+.theme-light .bg-\[\#0a0d18\],
+.theme-light .bg-\[\#0a0f18\],
+.theme-light .bg-\[\#0b0c12\],
+.theme-light .bg-\[\#0b0d14\],
+.theme-light .bg-\[\#0b0d16\],
+.theme-light .bg-\[\#0b0d17\],
+.theme-light .bg-\[\#0b0e1b\],
+.theme-light .bg-\[\#0c0d16\]\/80,
+.theme-light .bg-\[\#0c0e17\],
+.theme-light .bg-\[\#0c0e18\],
+.theme-light .bg-\[\#0c0f1c\],
+.theme-light .bg-\[\#0d0f19\],
+.theme-light .bg-\[\#0d0f1c\],
+.theme-light .bg-\[\#0d101a\],
+.theme-light .bg-\[\#0d101b\],
+.theme-light .bg-\[\#0e1019\],
+.theme-light .bg-\[\#0e1019\]\/60,
+.theme-light .bg-\[\#0e101d\],
+.theme-light .bg-\[\#0e111a\],
+.theme-light .bg-\[\#0e111a\]\/95,
+.theme-light .bg-\[\#0e111c\],
+.theme-light .bg-\[\#0e111d\],
+.theme-light .bg-\[\#0e111e\],
+.theme-light .bg-\[\#0e1f18\],
+.theme-light .bg-\[\#0e1f18\]\/95,
+.theme-light .bg-\[\#0e2219\],
+.theme-light .bg-\[\#0a1813\],
+.theme-light .bg-\[\#0f1118\],
+.theme-light .bg-\[\#0f111a\],
+.theme-light .bg-\[\#0f111c\],
+.theme-light .bg-\[\#0f121d\],
+.theme-light .bg-\[\#10121a\],
+.theme-light .bg-\[\#10121d\],
+.theme-light .bg-\[\#10121e\],
+.theme-light .bg-\[\#101220\],
+.theme-light .bg-\[\#101426\],
+.theme-light .bg-\[\#11131a\],
+.theme-light .bg-\[\#11131c\],
+.theme-light .bg-\[\#111320\],
+.theme-light .bg-\[\#111422\],
+.theme-light .bg-\[\#111422\]\/90,
+.theme-light .bg-\[\#12141c\],
+.theme-light .bg-\[\#12141c\]\/90,
+.theme-light .bg-\[\#121422\],
+.theme-light .bg-\[\#121424\],
+.theme-light .bg-\[\#121424\]\/95,
+.theme-light .bg-\[\#121522\],
+.theme-light .bg-\[\#121524\],
+.theme-light .bg-\[\#121524\]\/90,
+.theme-light .bg-\[\#121526\],
+.theme-light .bg-\[\#131522\],
+.theme-light .bg-\[\#131626\],
+.theme-light .bg-\[\#141220\],
+.theme-light .bg-\[\#141520\],
+.theme-light .bg-\[\#141624\],
+.theme-light .bg-\[\#141628\],
+.theme-light .bg-\[\#141722\],
+.theme-light .bg-\[\#151722\],
+.theme-light .bg-\[\#161828\],
+.theme-light .bg-\[\#161925\],
+.theme-light .bg-\[\#161926\],
+.theme-light .bg-\[\#161a29\],
+.theme-light .bg-\[\#17142b\],
+.theme-light .bg-\[\#180a0f\],
+.theme-light .bg-\[\#181a30\],
+.theme-light .bg-\[\#1a1738\],
+.theme-light .bg-\[\#1a1b32\],
+.theme-light .bg-\[\#13172e\] {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+}
+
+/* 3. Neutral Gray Cards & Wells in Light Mode */
+.theme-light .bg-gray-900,
+.theme-light .bg-gray-900\/95,
+.theme-light .bg-gray-900\/90,
+.theme-light .bg-gray-900\/80,
+.theme-light .bg-gray-900\/70,
+.theme-light .bg-gray-900\/60,
+.theme-light .bg-gray-900\/50,
+.theme-light .bg-gray-900\/40,
+.theme-light .bg-gray-900\/30,
+.theme-light .bg-gray-900\/25,
+.theme-light .bg-gray-900\/20,
+.theme-light .bg-gray-900\/10 {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+.theme-light .bg-gray-800,
+.theme-light .bg-gray-800\/90,
+.theme-light .bg-gray-800\/80,
+.theme-light .bg-gray-800\/70,
+.theme-light .bg-gray-800\/60,
+.theme-light .bg-gray-800\/50,
+.theme-light .bg-gray-800\/40,
+.theme-light .bg-gray-800\/30,
+.theme-light .bg-gray-800\/20 {
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+  color: #1e293b !important;
+}
+
+/* 4. Tinted Callouts & Badges in Light Mode (Replace Dark-950 Mud with Soft Clean Pastels) */
+.theme-light [class*="bg-indigo-950"] {
+  background-color: #eef2ff !important;
+  border-color: #c7d2fe !important;
+  color: #312e81 !important;
+}
+.theme-light [class*="bg-emerald-950"] {
+  background-color: #ecfdf5 !important;
+  border-color: #a7f3d0 !important;
+  color: #064e3b !important;
+}
+.theme-light [class*="bg-amber-950"] {
+  background-color: #fffbeb !important;
+  border-color: #fde68a !important;
+  color: #78350f !important;
+}
+.theme-light [class*="bg-purple-950"] {
+  background-color: #faf5ff !important;
+  border-color: #e9d5ff !important;
+  color: #581c87 !important;
+}
+.theme-light [class*="bg-red-950"],
+.theme-light [class*="bg-rose-950"] {
+  background-color: #fef2f2 !important;
+  border-color: #fecaca !important;
+  color: #991b1b !important;
+}
+.theme-light [class*="bg-blue-950"] {
+  background-color: #eff6ff !important;
+  border-color: #bfdbfe !important;
+  color: #1e3a8a !important;
+}
+.theme-light [class*="bg-cyan-950"] {
+  background-color: #ecfeff !important;
+  border-color: #a5f3fc !important;
+  color: #164e63 !important;
+}
+
+/* Overrides for Hardcoded Dark Border Classes */
+.theme-light .border-gray-800,
+.theme-light .border-gray-800\/80,
+.theme-light .border-gray-800\/60,
+.theme-light .border-gray-700,
+.theme-light .border-white\/\[0\.08\],
+.theme-light .border-white\/\[0\.07\],
+.theme-light .border-white\/\[0\.06\],
+.theme-light .border-white\/\[0\.05\],
+.theme-light .border-white\/\[0\.04\] {
+  border-color: #e2e8f0 !important;
+}
+
+/* Overrides for Hardcoded Light/Dark Typography */
+.theme-light .text-white,
+.theme-light .text-gray-100,
+.theme-light .text-gray-200 {
+  color: #0f172a !important;
+}
+
+.theme-light .text-gray-300,
+.theme-light .text-gray-400 {
+  color: #475569 !important;
+}
+
+.theme-light .text-gray-500 {
+  color: #64748b !important;
+}
+
+/* Eliminate All Dark Gradients in Light Mode (The Zebra/Checkerboard Fix) */
+/* Exclude text clipping gradients so brand titles and labels remain visible */
+.theme-light [class*="bg-gradient-to-r"]:not([class*="bg-clip-text"]):not(.guide-workbench-card):not(.live-submit-btn),
+.theme-light [class*="from-\[\#"],
+.theme-light [class*="from-emerald-950"],
+.theme-light [class*="from-purple-950"],
+.theme-light [class*="from-indigo-950"] {
+  background-image: none !important;
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Brand Title & Header Elements in Light Mode */
+.theme-light .brand-title-text {
+  background: linear-gradient(135deg, #4338ca 0%, #6d28d9 50%, #be185d 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: #4338ca !important;
+  display: inline-block !important;
+}
+.theme-light .brand-badge-pro {
+  background-color: #e0e7ff !important;
+  color: #3730a3 !important;
+  border-color: #c7d2fe !important;
+  font-weight: 600 !important;
+}
+
+/* Rookie Academy Card in Light Mode */
+.theme-light .guide-workbench-card {
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%) !important;
+  border-color: #fcd34d !important;
+  box-shadow: 0 1px 4px rgba(217, 119, 6, 0.1) !important;
+}
+.theme-light .guide-workbench-card:hover {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%) !important;
+  border-color: #f59e0b !important;
+}
+.theme-light .guide-title {
+  color: #92400e !important;
+  font-weight: 700 !important;
+}
+.theme-light .guide-subtitle {
+  color: #b45309 !important;
+  font-weight: 600 !important;
+}
+.theme-light .guide-icon-box {
+  background-color: #fef3c7 !important;
+  border-color: #fcd34d !important;
+  color: #b45309 !important;
+}
+.theme-light .guide-icon {
+  color: #d97706 !important;
+}
+.theme-light .guide-arrow {
+  color: #d97706 !important;
+}
+
+/* Forge Button in Light Mode */
+.theme-light .forge-workbench-btn {
+  background: #faf5ff !important;
+  border-color: #e9d5ff !important;
+  color: #581c87 !important;
+}
+.theme-light .forge-workbench-btn:hover {
+  background: #f3e8ff !important;
+  border-color: #d8b4fe !important;
+}
+.theme-light .forge-btn-title {
+  color: #581c87 !important;
+  font-weight: 600 !important;
+}
+.theme-light .forge-btn-badge {
+  color: #7e22ce !important;
+  background: #f3e8ff !important;
+  border-color: #d8b4fe !important;
+}
+
+/* Doctor Button in Light Mode */
+.theme-light .doctor-workbench-btn {
+  background: #f0fdf4 !important;
+  border-color: #bbf7d0 !important;
+  color: #14532d !important;
+}
+.theme-light .doctor-workbench-btn:hover {
+  background: #dcfce7 !important;
+  border-color: #86efac !important;
+}
+.theme-light .doctor-btn-title {
+  color: #14532d !important;
+  font-weight: 600 !important;
+}
+.theme-light .doctor-btn-badge {
+  color: #15803d !important;
+  background: #dcfce7 !important;
+  border-color: #86efac !important;
+}
+
+/* Injected Workbench Button in Light Mode */
+.theme-light .injected-workbench-btn:not(.bg-emerald-600\/25) {
+  color: #334155 !important;
+}
+.theme-light .injected-btn-title {
+  color: #334155 !important;
+}
+
+/* Sidebar Health Card */
+.theme-light .sidebar-health-card {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+.theme-light .sidebar-health-card .health-title {
+  color: #334155 !important;
+}
+.theme-light .sidebar-health-card .health-path {
+  color: #64748b !important;
+}
+
+/* LiveInjector Light Mode Enhancements */
+.theme-light [data-live-injector="true"] .live-scope-tab-btn {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #475569 !important;
+}
+.theme-light [data-live-injector="true"] .live-scope-tab-btn.is-active {
+  background-color: #eef2ff !important;
+  border-color: #6366f1 !important;
+  color: #3730a3 !important;
+  box-shadow: 0 1px 3px rgba(99, 102, 241, 0.15) !important;
+}
+.theme-light [data-live-injector="true"] .live-form {
+  background: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 4px 16px -2px rgba(15, 23, 42, 0.08) !important;
+}
+.theme-light [data-live-injector="true"] .live-input-box {
+  background-color: #f8fafc !important;
+  border-color: #94a3b8 !important;
+}
+.theme-light [data-live-injector="true"] .live-input-box:focus-within {
+  border-color: #6366f1 !important;
+  background-color: #ffffff !important;
+}
+.theme-light [data-live-injector="true"] .live-input-field {
+  color: #0f172a !important;
+}
+.theme-light [data-live-injector="true"] .live-input-field::placeholder {
+  color: #94a3b8 !important;
+}
+.theme-light [data-live-injector="true"] .live-ai-btn {
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+  color: #4338ca !important;
+  font-weight: 600 !important;
+}
+.theme-light [data-live-injector="true"] .live-ai-btn:hover:not(:disabled) {
+  background-color: #e2e8f0 !important;
+  border-color: #94a3b8 !important;
+}
+.theme-light [data-live-injector="true"] .live-universal-tag {
+  background-color: #f3e8ff !important;
+  border-color: #d8b4fe !important;
+  color: #6b21a8 !important;
+}
+.theme-light [data-live-injector="true"] .live-skill-select-container {
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+}
+.theme-light [data-live-injector="true"] .live-skill-select {
+  color: #3730a3 !important;
+}
+.theme-light [data-live-injector="true"] .live-priority-select {
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+  color: #334155 !important;
+}
+.theme-light [data-live-injector="true"] .live-submit-btn:not(:disabled) {
+  background: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%) !important;
+  border-color: #d97706 !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 6px rgba(245, 158, 11, 0.3) !important;
+}
+.theme-light [data-live-injector="true"] .live-submit-btn:not(:disabled) * {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+}
+.theme-light [data-live-injector="true"] .live-submit-btn:disabled {
+  background: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
+  color: #94a3b8 !important;
+  opacity: 0.7 !important;
+}
+.theme-light [data-live-injector="true"] .live-toolbar-row,
+.theme-light [data-live-injector="true"] .live-hint-row {
+  border-color: #e2e8f0 !important;
+}
+
+/* Fix Input Boxes, Directive Form, and Bottom Status Bars */
+.theme-light .bg-\[\#0a0c14\],
+.theme-light .bg-\[\#0b0d18\],
+.theme-light .bg-\[\#0f121d\],
+.theme-light .bg-\[\#121424\]\/95,
+.theme-light .bg-\[\#12141c\]\/90 {
+  background-color: #f8fafc !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+/* Fix Pale/Washed-Out Text on Light Backgrounds */
+.theme-light .text-purple-200,
+.theme-light .text-purple-300 {
+  color: #6b21a8 !important;
+}
+.theme-light .text-indigo-200,
+.theme-light .text-indigo-300 {
+  color: #3730a3 !important;
+}
+.theme-light .text-amber-200,
+.theme-light .text-amber-300 {
+  color: #92400e !important;
+}
+.theme-light .text-emerald-200,
+.theme-light .text-emerald-300 {
+  color: #065f46 !important;
+}
+.theme-light .text-blue-200,
+.theme-light .text-blue-300 {
+  color: #1e40af !important;
+}
+.theme-light .text-cyan-200,
+.theme-light .text-cyan-300 {
+  color: #155e75 !important;
+}
+
+/* Fix Button Pills on Light Mode */
+.theme-light .bg-purple-500\/10,
+.theme-light .bg-purple-500\/15,
+.theme-light .bg-purple-500\/20,
+.theme-light .bg-purple-600\/20 {
+  background-color: #f3e8ff !important;
+  border-color: #d8b4fe !important;
+}
+.theme-light .bg-indigo-500\/10,
+.theme-light .bg-indigo-500\/15,
+.theme-light .bg-indigo-500\/20,
+.theme-light .bg-indigo-600\/20 {
+  background-color: #e0e7ff !important;
+  border-color: #c7d2fe !important;
+}
+.theme-light .bg-amber-500\/10,
+.theme-light .bg-amber-500\/15,
+.theme-light .bg-amber-500\/20,
+.theme-light .bg-amber-600\/20 {
+  background-color: #fef3c7 !important;
+  border-color: #fde68a !important;
+}
+.theme-light .bg-emerald-500\/10,
+.theme-light .bg-emerald-500\/15,
+.theme-light .bg-emerald-500\/20,
+.theme-light .bg-emerald-600\/20 {
+  background-color: #d1fae5 !important;
+  border-color: #a7f3d0 !important;
+}
+
+/* Inputs, Textareas, and Selects in Light Mode */
+.theme-light input,
+.theme-light input[type="text"],
+.theme-light textarea,
+.theme-light select {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+.theme-light input::placeholder,
+.theme-light textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* Protect Text on Filled Primary Accent Buttons */
+.theme-light .bg-indigo-600,
+.theme-light .bg-purple-600,
+.theme-light .bg-emerald-600,
+.theme-light .bg-blue-600,
+.theme-light .bg-red-600,
+.theme-light .bg-amber-600,
+.theme-light .bg-indigo-600 *,
+.theme-light .bg-purple-600 *,
+.theme-light .bg-emerald-600 *,
+.theme-light .bg-blue-600 *,
+.theme-light .bg-red-600 *,
+.theme-light .bg-amber-600 * {
+  color: #ffffff !important;
+}
+
+/* Ecosystem Accent Glows in Light Mode */
+.theme-light .glow-gemini:hover {
+  border-color: rgba(147, 51, 234, 0.55) !important;
+  box-shadow: 0 8px 24px -4px rgba(147, 51, 234, 0.16) !important;
+}
+.theme-light .glow-claude:hover {
+  border-color: rgba(217, 119, 6, 0.55) !important;
+  box-shadow: 0 8px 24px -4px rgba(217, 119, 6, 0.16) !important;
+}
+.theme-light .glow-codex:hover {
+  border-color: rgba(5, 150, 105, 0.55) !important;
+  box-shadow: 0 8px 24px -4px rgba(5, 150, 105, 0.16) !important;
+}
+.theme-light .glow-agents:hover {
+  border-color: rgba(37, 99, 235, 0.55) !important;
+  box-shadow: 0 8px 24px -4px rgba(37, 99, 235, 0.16) !important;
+}
+
+/* Markdown Reader in Light Mode */
+.theme-light .markdown-reader {
+  color: #334155;
+}
+.theme-light .markdown-reader h1,
+.theme-light .markdown-reader h2,
+.theme-light .markdown-reader h3,
+.theme-light .markdown-reader h4,
+.theme-light .markdown-reader strong,
+.theme-light .markdown-reader b {
+  color: #0f172a;
+}
+.theme-light .markdown-reader p,
+.theme-light .markdown-reader li {
+  color: #334155;
+}
+.theme-light .markdown-reader pre {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+.theme-light .markdown-reader pre code {
+  color: #0f172a;
+}
+.theme-light .markdown-reader code:not(pre code) {
+  background-color: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  color: #4f46e5;
+}
+.theme-light .markdown-reader blockquote {
+  background: #f8fafc;
+  border-left-color: #6366f1;
+  color: #475569;
+}
+.theme-light .markdown-reader th {
+  background-color: #f8fafc;
+  color: #0f172a;
+  border-color: #e2e8f0;
+}
+.theme-light .markdown-reader td {
+  border-color: #e2e8f0;
+  color: #334155;
+}
+.theme-light .markdown-reader tr:nth-child(even) {
+  background-color: #f8fafc;
+}
+
+/* Universal Select Dropdown Option Theming */
+select option {
+  background-color: #121422;
+  color: #e2e8f0;
+}
+
+.theme-light select option {
+  background-color: #ffffff;
+  color: #0f172a;
+}
+
+/* ==========================================================================
+   Component-Specific Light Theme Overrides (High Contrast & Clean Surfaces)
+   ========================================================================== */
+
+/* 5. LiveInjector / Steering Cockpit in Light Mode */
+.theme-light #live-steering-cockpit form {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 4px 16px -2px rgba(15, 23, 42, 0.05) !important;
+}
+.theme-light #live-steering-cockpit .bg-gray-900\/50,
+.theme-light #live-steering-cockpit .bg-gray-900\/60,
+.theme-light #live-steering-cockpit [class*="bg-gray-900"] {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05) !important;
+  color: #0f172a !important;
+}
+.theme-light #live-steering-cockpit [class*="bg-gray-900"]:hover {
+  border-color: #c7d2fe !important;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.08) !important;
+}
+.theme-light #live-steering-cockpit p.text-gray-200,
+.theme-light #live-steering-cockpit p.text-gray-300,
+.theme-light #live-steering-cockpit p {
+  color: #0f172a !important;
+  font-weight: 500 !important;
+}
+.theme-light #live-steering-cockpit button[class*="bg-gray-800"] {
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+.theme-light #live-steering-cockpit button[class*="bg-gray-800"]:hover {
+  background-color: #eef2ff !important;
+  border-color: #a5b4fc !important;
+}
+
+/* 6. Rookie Guide Modal in Light Mode (The Learning Academy) */
+.theme-light [data-rookie-modal="true"] {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.18) !important;
+}
+.theme-light [data-rookie-modal="true"] > div:first-child {
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 45%, #ffffff 100%) !important;
+  border-bottom: 1px solid #fed7aa !important;
+}
+.theme-light [data-rookie-modal="true"] > div:first-child h3 {
+  color: #78350f !important;
+}
+.theme-light [data-rookie-modal="true"] > div:first-child p {
+  color: #92400e !important;
+}
+.theme-light [data-rookie-modal="true"] > div:first-child button {
+  color: #92400e !important;
+}
+.theme-light [data-rookie-modal="true"] > div:first-child button:hover {
+  background-color: #fef3c7 !important;
+}
+.theme-light [data-rookie-modal="true"] .bg-\[\#0a0c16\] {
+  background-color: #ffffff !important;
+}
+.theme-light [data-rookie-modal="true"] .bg-\[\#0e111e\] {
+  background-color: #f8fafc !important;
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05) !important;
+}
+.theme-light [data-rookie-modal="true"] .bg-\[\#0e111e\] h4 {
+  color: #0f172a !important;
+  font-weight: 800 !important;
+}
+.theme-light [data-rookie-modal="true"] .bg-\[\#0e111e\] p {
+  color: #334155 !important;
+}
+.theme-light [data-rookie-modal="true"] .bg-\[\#090b14\] {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04) !important;
+}
+.theme-light [data-rookie-modal="true"] .bg-\[\#090b14\] p {
+  color: #1e293b !important;
+  font-weight: 500 !important;
+}
+
+/* 7. Skill Doctor Modal in Light Mode */
+.theme-light div[data-doctor-modal="true"] {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+.theme-light div[data-doctor-modal="true"] .doctor-review-card,
+.theme-light div[data-doctor-modal="true"] .doctor-score-card,
+.theme-light div[data-doctor-modal="true"] .doctor-matrix-card,
+.theme-light div[data-doctor-modal="true"] .doctor-file-banner,
+.theme-light div[data-doctor-modal="true"] .doctor-issue-item {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+  color: #0f172a !important;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04) !important;
+}
+.theme-light div[data-doctor-modal="true"] .doctor-review-content {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #1e293b !important;
+}
+.theme-light div[data-doctor-modal="true"] .doctor-review-title,
+.theme-light div[data-doctor-modal="true"] .doctor-score-title,
+.theme-light div[data-doctor-modal="true"] .doctor-matrix-title,
+.theme-light div[data-doctor-modal="true"] .doctor-issues-title,
+.theme-light div[data-doctor-modal="true"] .doctor-dim-label {
+  color: #0f172a !important;
+}
+.theme-light div[data-doctor-modal="true"] .doctor-dim-val {
+  color: #4338ca !important;
+}
+.theme-light div[data-doctor-modal="true"] .doctor-score-val {
+  color: #047857 !important;
+}
+.theme-light div[data-doctor-modal="true"] .doctor-progress-track {
+  background-color: #e2e8f0 !important;
+}
+.theme-light div[data-doctor-modal="true"] .doctor-issue-name {
+  color: #0f172a !important;
+}
+.theme-light div[data-doctor-modal="true"] .doctor-issue-desc {
+  color: #334155 !important;
+}
+
+/* 8. Vault & Commit Modals & Popovers in Light Mode */
+.theme-light div[data-vault-modal="true"],
+.theme-light div[data-commit-modal="true"] {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+.theme-light div[data-commit-modal="true"] header,
+.theme-light div[data-commit-modal="true"] > div > div:first-child {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+.theme-light div[data-workspace-popover="true"] {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.1) !important;
+}
+
+/* 9. Compact Skill Row in Light Mode */
+.theme-light div[data-skill-compact="true"] {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04) !important;
+  color: #0f172a !important;
+}
+.theme-light div[data-skill-compact="true"]:hover {
+  border-color: rgba(99, 102, 241, 0.5) !important;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.08) !important;
+}
+
+/* 10. Empty State in Light Mode */
+.theme-light div[data-retro-empty="true"] {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04) !important;
+  color: #0f172a !important;
+}
+
+/* 11. LiveInjector in Light Mode */
+.theme-light [data-live-injector="true"] .live-form {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05) !important;
+}
+.theme-light [data-live-injector="true"] .live-input-box {
+  background-color: #f8fafc !important;
+  border-color: #cbd5e1 !important;
+}
+.theme-light [data-live-injector="true"] .live-input-field {
+  color: #0f172a !important;
+}
+.theme-light [data-live-injector="true"] .live-universal-tag {
+  background-color: #f5f3ff !important;
+  border-color: #ddd6fe !important;
+  color: #6d28d9 !important;
+}
+.theme-light [data-live-injector="true"] .live-universal-tag * {
+  color: #6d28d9 !important;
+  stroke: #6d28d9 !important;
+}
+.theme-light [data-live-injector="true"] .live-skill-select-container,
+.theme-light [data-live-injector="true"] .live-priority-select {
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+  color: #1e293b !important;
+}
+.theme-light [data-live-injector="true"] .live-skill-select {
+  color: #4338ca !important;
+}
+.theme-light [data-live-injector="true"] .live-hint-row {
+  border-color: #e2e8f0 !important;
+  color: #64748b !important;
+}
+.theme-light [data-live-injector="true"] .live-directives-container,
+.theme-light [data-live-injector="true"] .live-rules-container {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04) !important;
+}
+.theme-light [data-live-injector="true"] .live-directive-item,
+.theme-light [data-live-injector="true"] .live-rule-item {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+.theme-light [data-live-injector="true"] .live-directive-content,
+.theme-light [data-live-injector="true"] .live-rule-content {
+  color: #0f172a !important;
+}
+.theme-light [data-live-injector="true"] .live-directive-skill-btn,
+.theme-light [data-live-injector="true"] .live-rule-skill-btn {
+  background-color: #e0e7ff !important;
+  border-color: #c7d2fe !important;
+  color: #3730a3 !important;
+}
+.theme-light [data-live-injector="true"] .live-directive-skill-btn *,
+.theme-light [data-live-injector="true"] .live-rule-skill-btn * {
+  color: #3730a3 !important;
+}
+
+/* 12. Settings Modal (BYOK & AI Models) in Light Mode */
+.theme-light div[data-settings-modal="true"] {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+}
+.theme-light div[data-settings-modal="true"] .settings-modal-header {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+.theme-light div[data-settings-modal="true"] .settings-header-title {
+  color: #0f172a !important;
+}
+.theme-light div[data-settings-modal="true"] .settings-header-subtitle {
+  color: #64748b !important;
+}
+.theme-light div[data-settings-modal="true"] .settings-tip-banner {
+  background-color: #f5f3ff !important;
+  border-color: #ddd6fe !important;
+  color: #4338ca !important;
+}
+.theme-light div[data-settings-modal="true"] .settings-tip-banner span {
+  color: #4338ca !important;
+}
+.theme-light div[data-settings-modal="true"] .settings-engine-label {
+  color: #475569 !important;
+}
+.theme-light div[data-settings-modal="true"] .settings-provider-tab {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+  color: #334155 !important;
+}
+.theme-light div[data-settings-modal="true"] .settings-provider-tab.is-active {
+  background-color: #e0e7ff !important;
+  border-color: #6366f1 !important;
+  color: #312e81 !important;
+}
+.theme-light div[data-settings-modal="true"] .settings-provider-badge {
+  background-color: #f1f5f9 !important;
+  color: #64748b !important;
+}
+.theme-light div[data-settings-modal="true"] .settings-provider-tab.is-active .settings-provider-badge {
+  background-color: #c7d2fe !important;
+  color: #3730a3 !important;
+}
+.theme-light div[data-settings-modal="true"] .settings-form-container {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+.theme-light div[data-settings-modal="true"] .settings-form-container label {
+  color: #334155 !important;
+}
+.theme-light div[data-settings-modal="true"] .settings-form-container input {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+.theme-light div[data-settings-modal="true"] .settings-station-btn {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+.theme-light div[data-settings-modal="true"] .settings-station-btn.is-active {
+  background-color: #e0e7ff !important;
+  border-color: #6366f1 !important;
+  color: #312e81 !important;
+}
+.theme-light div[data-settings-modal="true"] .settings-station-badge {
+  background-color: #4338ca !important;
+  color: #ffffff !important;
+}
+.theme-light div[data-settings-modal="true"] .settings-modal-footer {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+
+/* ==========================================================================
+   💾 WINDOWS 95 RETRO THEME (上古复古 95 极客经典皮肤 - 全局微软灰与硬核复古版)
+   ========================================================================== */
+
+html.theme-retro-win95 {
+  color-scheme: light !important;
+}
+
+/* 1. Global Reset & Universal Microsoft Gray (#c0c0c0) */
+html.theme-retro-win95,
+html.theme-retro-win95 body,
+html.theme-retro-win95 #root,
+html.theme-retro-win95 div.w-full.h-full,
+html.theme-retro-win95 main,
+html.theme-retro-win95 aside,
+html.theme-retro-win95 .bg-\[\#08090f\],
+html.theme-retro-win95 .bg-\[\#0b0d16\],
+html.theme-retro-win95 .bg-\[\#0a0c14\],
+html.theme-retro-win95 .bg-\[\#0d111c\],
+html.theme-retro-win95 .bg-\[\#0f121d\],
+html.theme-retro-win95 .bg-\[\#101423\],
+html.theme-retro-win95 .bg-\[\#111422\],
+html.theme-retro-win95 .bg-\[\#0e1019\],
+html.theme-retro-win95 .bg-\[\#090a12\],
+html.theme-retro-win95 .bg-\[\#121522\],
+html.theme-retro-win95 div[class*="bg-gray-900"],
+html.theme-retro-win95 div[class*="bg-gray-950"],
+html.theme-retro-win95 div[class*="bg-\[\#"] {
+  background: #c0c0c0 !important;
+  background-color: #c0c0c0 !important;
+  color: #000000 !important;
+  font-family: Tahoma, "Microsoft Sans Serif", "Segoe UI", Arial, sans-serif !important;
+}
+
+/* 2. Flat Pixel Geometry: Remove all rounded corners & modern blurs */
+html.theme-retro-win95 div,
+html.theme-retro-win95 aside,
+html.theme-retro-win95 main,
+html.theme-retro-win95 footer,
+html.theme-retro-win95 form,
+html.theme-retro-win95 section,
+html.theme-retro-win95 span,
+html.theme-retro-win95 button,
+html.theme-retro-win95 input,
+html.theme-retro-win95 select {
+  border-radius: 0px !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* 3. Strip all modern borders and neon glows */
+html.theme-retro-win95 div[class*="border-white"],
+html.theme-retro-win95 div[class*="border-gray-800"],
+html.theme-retro-win95 div[class*="border-gray-700"] {
+  border-color: #808080 !important;
+}
+html.theme-retro-win95 .glow-gemini,
+html.theme-retro-win95 .glow-claude,
+html.theme-retro-win95 .glow-codex,
+html.theme-retro-win95 .glow-agents,
+html.theme-retro-win95 [class*="ring-"],
+html.theme-retro-win95 [class*="shadow-[0_0_"] {
+  box-shadow: none !important;
+  filter: none !important;
+}
+html.theme-retro-win95 .animate-pulse,
+html.theme-retro-win95 .animate-ping {
+  animation: none !important;
+}
+
+/* 4. Iconic Chunky Scrollbars (16px Beveled Win95 Standard) */
+html.theme-retro-win95 ::-webkit-scrollbar {
+  width: 16px !important;
+  height: 16px !important;
+}
+html.theme-retro-win95 ::-webkit-scrollbar-track {
+  background: #dfdfdf !important;
+  border: 1px solid #808080 !important;
+}
+html.theme-retro-win95 ::-webkit-scrollbar-thumb {
+  background-color: #c0c0c0 !important;
+  border: 2px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important;
+  box-shadow: 1px 1px 0px 0px #000000 !important;
+  border-radius: 0px !important;
+}
+html.theme-retro-win95 ::-webkit-scrollbar-thumb:active {
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 0px 0px #000000 !important;
+}
+
+/* 5. Top Studio Navigation Bar -> Classic Win95 Navy Titlebar */
+html.theme-retro-win95 header {
+  background: linear-gradient(90deg, #000080 0%, #1084d0 100%) !important;
+  border-bottom: 2px solid #808080 !important;
+  box-shadow: inset 0 1px 0 #ffffff !important;
+}
+/* Only brand title spans get white text */
+html.theme-retro-win95 header .brand-title-win95 span,
+html.theme-retro-win95 header .brand-title-win95 * {
+  color: #ffffff !important;
+}
+
+/* Header buttons must have crisp black text on Microsoft gray */
+html.theme-retro-win95 header button,
+html.theme-retro-win95 header button * {
+  color: #000000 !important;
+}
+html.theme-retro-win95 header button svg {
+  stroke: #000000 !important;
+}
+
+/* Header search well: clean white sunken well */
+html.theme-retro-win95 header div:has(> input) {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+  border: 2px solid !important;
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 0px 0px #000000 !important;
+  border-radius: 0px !important;
+}
+html.theme-retro-win95 header div:has(> input) input {
+  background: transparent !important;
+  color: #000000 !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+html.theme-retro-win95 header div:has(> input) svg {
+  stroke: #000080 !important;
+}
+
+/* 6. THE SOUL: 3D Bevel Buttons (Outset / Active Inset) - ULTRA HIGH CONTRAST */
+html.theme-retro-win95 button {
+  background-color: #c0c0c0 !important;
+  border: 2px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important;
+  box-shadow: 1px 1px 0px 0px #000000 !important;
+  color: #000000 !important;
+  text-shadow: none !important;
+  font-weight: 600 !important;
+  transition: none !important;
+}
+html.theme-retro-win95 button * {
+  color: #000000 !important;
+}
+html.theme-retro-win95 button svg {
+  stroke: #000000 !important;
+}
+html.theme-retro-win95 button:hover:not(:active) {
+  background-color: #d4d0c8 !important;
+}
+html.theme-retro-win95 button:active,
+html.theme-retro-win95 .cursor-pointer:active {
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 0px 0px #000000 !important;
+  transform: translate(1px, 1px) !important;
+  background-color: #c0c0c0 !important;
+}
+
+/* Active Selected Buttons: Windows 95/98 Navy Selection (#000080) for Segmented Switchers */
+html.theme-retro-win95 .theme-switcher-container button.bg-indigo-600,
+html.theme-retro-win95 .theme-switcher-container button.bg-amber-500,
+html.theme-retro-win95 .theme-switcher-container button.bg-teal-700,
+html.theme-retro-win95 button[data-theme-btn="retro-win95"],
+html.theme-retro-win95 [data-retro-selected="true"] {
+  background: #000080 !important;
+  background-color: #000080 !important;
+  color: #ffffff !important;
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 0px 0px #000000 !important;
+}
+html.theme-retro-win95 .theme-switcher-container button.bg-indigo-600 *,
+html.theme-retro-win95 .theme-switcher-container button.bg-amber-500 *,
+html.theme-retro-win95 .theme-switcher-container button.bg-teal-700 *,
+html.theme-retro-win95 button[data-theme-btn="retro-win95"] *,
+html.theme-retro-win95 [data-retro-selected="true"] * {
+  color: #ffffff !important;
+}
+html.theme-retro-win95 .theme-switcher-container button.bg-indigo-600 svg,
+html.theme-retro-win95 .theme-switcher-container button.bg-amber-500 svg,
+html.theme-retro-win95 .theme-switcher-container button.bg-teal-700 svg,
+html.theme-retro-win95 button[data-theme-btn="retro-win95"] svg,
+html.theme-retro-win95 [data-retro-selected="true"] svg {
+  stroke: #ffffff !important;
+}
+
+/* Inactive Segmented Container (Language & Theme switchers) */
+html.theme-retro-win95 .theme-switcher-container,
+html.theme-retro-win95 header .bg-gray-900\/90 {
+  background-color: #808080 !important;
+  border: 1px solid #000000 !important;
+  border-radius: 0px !important;
+  padding: 1px !important;
+}
+
+/* Ensure all editable inputs allow text selection and standard carets */
+input, textarea, [contenteditable] {
+  user-select: text !important;
+  -webkit-user-select: text !important;
+}
+
+/* 7. Inset Sunken Wells (Inputs, Search Boxes, Textareas) */
+html.theme-retro-win95 input,
+html.theme-retro-win95 textarea,
+html.theme-retro-win95 select {
+  font-family: Tahoma, 'Microsoft Sans Serif', 'Segoe UI', Arial, sans-serif !important;
+}
+
+/* Standalone inputs or wells */
+html.theme-retro-win95 input:not(div > input),
+html.theme-retro-win95 textarea,
+html.theme-retro-win95 select,
+html.theme-retro-win95 .bg-\[\#0a0c14\],
+html.theme-retro-win95 div:has(> input) {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid !important;
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 0px 0px #000000 !important;
+  border-radius: 0px !important;
+  outline: none !important;
+}
+
+/* Windows 98 Pure White ComboBox Dropdown Wells & Options */
+html.theme-retro-win95 select,
+html.theme-retro-win95 select option,
+html.theme-retro-win95 option {
+  color-scheme: light !important;
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+  color: #000000 !important;
+  font-family: Tahoma, 'Microsoft Sans Serif', 'Segoe UI', Arial, sans-serif !important;
+}
+
+html.theme-retro-win95 select option:checked,
+html.theme-retro-win95 option:checked,
+html.theme-retro-win95 select option:hover,
+html.theme-retro-win95 option:hover {
+  background-color: #000080 !important;
+  color: #ffffff !important;
+}
+
+html.theme-retro-win95 div:has(> select) {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid !important;
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 0px 0px #000000 !important;
+  border-radius: 0px !important;
+}
+
+html.theme-retro-win95 div:has(> select) svg {
+  color: #000080 !important;
+}
+
+html.theme-retro-win95 div:has(> select) select {
+  border: none !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
+  background: transparent !important;
+  color: #000000 !important;
+}
+
+/* Child input inside a sunken well: seamless, transparent, with solid black blinking caret */
+html.theme-retro-win95 div:has(> input) input,
+html.theme-retro-win95 .bg-\[\#0a0c14\] input {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  color: #000000 !important;
+  caret-color: #000000 !important;
+  user-select: text !important;
+  -webkit-user-select: text !important;
+}
+
+/* Blinking black caret on ALL inputs in Win95 theme */
+html.theme-retro-win95 input,
+html.theme-retro-win95 textarea,
+html.theme-retro-win95 [contenteditable] {
+  font-family: Tahoma, 'Microsoft Sans Serif', 'Segoe UI', Arial, sans-serif !important;
+  caret-color: #000000 !important;
+  color: #000000 !important;
+  user-select: text !important;
+  -webkit-user-select: text !important;
+  cursor: text !important;
+}
+html.theme-retro-win95 .bg-\[\#0a0c14\] * {
+  color: #000000 !important;
+}
+html.theme-retro-win95 .bg-\[\#0a0c14\] svg {
+  stroke: #000000 !important;
+}
+html.theme-retro-win95 input::placeholder,
+html.theme-retro-win95 textarea::placeholder {
+  color: #808080 !important;
+  font-weight: normal !important;
+  font-style: normal !important;
+}
+html.theme-retro-win95 kbd {
+  border-radius: 0px !important;
+  background-color: #c0c0c0 !important;
+  border: 1px solid #808080 !important;
+  box-shadow: 1px 1px 0px #000000 !important;
+  color: #000000 !important;
+}
+
+/* 8. Sidebar in Win95 Mode */
+html.theme-retro-win95 aside {
+  background-color: #c0c0c0 !important;
+  border-right: 2px solid #808080 !important;
+  box-shadow: inset -1px 0 0 #ffffff !important;
+}
+html.theme-retro-win95 aside * {
+  color: #000000 !important;
+}
+html.theme-retro-win95 aside svg {
+  stroke: #000000 !important;
+}
+
+/* Sidebar Nav Items as Windows 95 Raised 3D Push-Buttons (Toolbox Push-Button Style) */
+html.theme-retro-win95 aside [data-drag-id],
+html.theme-retro-win95 aside div[role="button"][data-drag-id] {
+  background-color: #c0c0c0 !important;
+  border: 2px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important;
+  box-shadow: 1px 1px 0px 0px #000000 !important;
+  border-radius: 0px !important;
+  color: #000000 !important;
+  margin-bottom: 3px !important;
+}
+html.theme-retro-win95 aside [data-drag-id]:hover {
+  background-color: #d4d4d4 !important;
+}
+html.theme-retro-win95 aside [data-drag-id]:active {
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 0px 0px #000000 !important;
+  transform: translate(1px, 1px) !important;
+}
+
+/* Selected item in Sidebar: Classic Windows Navy Highlight with White Text */
+html.theme-retro-win95 aside [data-drag-id][class*="bg-indigo-600"],
+html.theme-retro-win95 aside [data-drag-id][class*="border-indigo-500"],
+html.theme-retro-win95 aside [data-drag-id][class*="bg-emerald-600"],
+html.theme-retro-win95 aside [data-drag-id][class*="border-emerald-500"],
+html.theme-retro-win95 aside button.bg-indigo-600\/25,
+html.theme-retro-win95 aside button[class*="border-indigo-500"] {
+  background-color: #000080 !important;
+  color: #ffffff !important;
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 0px 0px #000000 !important;
+}
+html.theme-retro-win95 aside [data-drag-id][class*="bg-indigo-600"] *,
+html.theme-retro-win95 aside [data-drag-id][class*="border-indigo-500"] *,
+html.theme-retro-win95 aside [data-drag-id][class*="bg-emerald-600"] *,
+html.theme-retro-win95 aside [data-drag-id][class*="border-emerald-500"] *,
+html.theme-retro-win95 aside button.bg-indigo-600\/25 *,
+html.theme-retro-win95 aside button[class*="border-indigo-500"] * {
+  color: #ffffff !important;
+}
+html.theme-retro-win95 aside [data-drag-id][class*="bg-indigo-600"] svg,
+html.theme-retro-win95 aside [data-drag-id][class*="border-indigo-500"] svg,
+html.theme-retro-win95 aside [data-drag-id][class*="bg-emerald-600"] svg,
+html.theme-retro-win95 aside [data-drag-id][class*="border-emerald-500"] svg,
+html.theme-retro-win95 aside button.bg-indigo-600\/25 svg,
+html.theme-retro-win95 aside button[class*="border-indigo-500"] svg {
+  stroke: #ffffff !important;
+}
+
+/* Sidebar Count Badges: Crystal Clear 3D Inset Well (Fixes "黑块了") */
+html.theme-retro-win95 aside span.font-mono,
+html.theme-retro-win95 aside span[class*="bg-gray-900"],
+html.theme-retro-win95 aside span[class*="bg-gray-800"] {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border: 1px solid #808080 !important;
+  box-shadow: inset 1px 1px 0px 0px #000000 !important;
+  border-radius: 0px !important;
+  font-weight: 700 !important;
+}
+
+/* When parent item is active (Navy background), badge is white box with navy text */
+html.theme-retro-win95 aside [data-drag-id][class*="bg-indigo-600"] span.font-mono,
+html.theme-retro-win95 aside [data-drag-id][class*="border-indigo-500"] span.font-mono {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  color: #000080 !important;
+  border: 1px solid #ffffff !important;
+  box-shadow: inset 1px 1px 0px 0px #808080 !important;
+}
+
+/* Sidebar Section Headers (技能资产大厅, 专属工作台) */
+html.theme-retro-win95 aside button[class*="hover:bg-white"] {
+  border-radius: 0px !important;
+  color: #000000 !important;
+}
+html.theme-retro-win95 aside button[class*="hover:bg-white"] span {
+  color: #000000 !important;
+}
+html.theme-retro-win95 aside button[class*="hover:bg-white"] svg {
+  stroke: #000000 !important;
+}
+
+/* 8.5. Right Matrix & Injected Banners ("全生态技能资产矩阵" & "已注入的技能与指令" 灰色配色与3D浮雕) */
+html.theme-retro-win95 [data-matrix-banner="true"],
+html.theme-retro-win95 [data-injected-banner="true"],
+html.theme-retro-win95 div[class*="from-\[\#0e111d\]"],
+html.theme-retro-win95 div[class*="from-\[\#121324\]"] {
+  background-image: none !important;
+  background: #c0c0c0 !important;
+  background-color: #c0c0c0 !important;
+  border: 2px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important;
+  box-shadow: 1px 1px 0px 0px #000000 !important;
+  border-radius: 0px !important;
+  color: #000000 !important;
+}
+html.theme-retro-win95 [data-matrix-banner="true"] h2,
+html.theme-retro-win95 [data-injected-banner="true"] h2,
+html.theme-retro-win95 div[class*="from-\[\#0e111d\]"] h2,
+html.theme-retro-win95 div[class*="from-\[\#121324\]"] h2 {
+  color: #000080 !important;
+  font-weight: 800 !important;
+}
+html.theme-retro-win95 [data-matrix-banner="true"] p,
+html.theme-retro-win95 [data-injected-banner="true"] p,
+html.theme-retro-win95 div[class*="from-\[\#0e111d\]"] p,
+html.theme-retro-win95 div[class*="from-\[\#121324\]"] p {
+  color: #222222 !important;
+}
+html.theme-retro-win95 [data-matrix-banner="true"] span,
+html.theme-retro-win95 [data-injected-banner="true"] span,
+html.theme-retro-win95 div[class*="from-\[\#0e111d\]"] span,
+html.theme-retro-win95 div[class*="from-\[\#121324\]"] span {
+  background-color: #dfdfdf !important;
+  border: 1px solid #808080 !important;
+  box-shadow: inset 1px 1px 0px #000000 !important;
+  border-radius: 0px !important;
+  color: #000000 !important;
+}
+html.theme-retro-win95 [data-matrix-banner="true"] div[class*="border"],
+html.theme-retro-win95 [data-injected-banner="true"] div[class*="border"] {
+  background-color: #dfdfdf !important;
+  border: 2px solid !important;
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 0px #000000 !important;
+  border-radius: 0px !important;
+}
+html.theme-retro-win95 [data-matrix-banner="true"] div[class*="border"] svg,
+html.theme-retro-win95 [data-injected-banner="true"] div[class*="border"] svg {
+  stroke: #000080 !important;
+}
+html.theme-retro-win95 [data-matrix-banner="true"] button,
+html.theme-retro-win95 [data-injected-banner="true"] button {
+  background-color: #c0c0c0 !important;
+  border: 2px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important;
+  box-shadow: 1px 1px 0px 0px #000000 !important;
+  border-radius: 0px !important;
+  color: #000000 !important;
+}
+html.theme-retro-win95 [data-matrix-banner="true"] button *,
+html.theme-retro-win95 [data-injected-banner="true"] button * {
+  color: #000000 !important;
+}
+
+/* 9. Skill Cards (SkillPill): Pure White Document Well sitting on Gray Window */
+html.theme-retro-win95 .glass-card,
+html.theme-retro-win95 div.glass-card,
+html.theme-retro-win95 div[class*="glass-card"] {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  border: 2px solid !important;
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 0px 0px #000000 !important;
+  border-radius: 0px !important;
+  color: #000000 !important;
+}
+html.theme-retro-win95 .glass-card h4 {
+  color: #000080 !important; /* Win95 Navy Title */
+  font-weight: 700 !important;
+}
+html.theme-retro-win95 .glass-card p {
+  color: #000000 !important;
+}
+html.theme-retro-win95 .glass-card span {
+  color: #000000 !important;
+}
+html.theme-retro-win95 .glass-card div[class*="p-2"] {
+  background-color: #dfdfdf !important;
+  border: 1px solid #808080 !important;
+}
+html.theme-retro-win95 .glass-card div[class*="p-2"] svg {
+  stroke: #000000 !important;
+}
+html.theme-retro-win95 .glass-card span[class*="rounded"] {
+  border-radius: 0px !important;
+  background-color: #eaeaea !important;
+  border: 1px solid #808080 !important;
+  color: #000000 !important;
+}
+html.theme-retro-win95 .glass-card button {
+  background-color: #c0c0c0 !important;
+  border: 2px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important;
+  box-shadow: 1px 1px 0px 0px #000000 !important;
+  color: #000000 !important;
+  font-weight: 600 !important;
+}
+html.theme-retro-win95 .glass-card button * {
+  color: #000000 !important;
+}
+
+/* 10. LiveInjector & Steering Cockpit in Microsoft Gray (Windows 95/98 SE Geeks Edition) */
+html.theme-retro-win95 [data-live-injector="true"],
+html.theme-retro-win95 [data-live-injector="true"] * {
+  border-radius: 0px !important;
+  box-shadow: none !important;
+}
+
+html.theme-retro-win95 [data-live-injector="true"] .live-scope-bar {
+  background: transparent !important;
+  border-bottom: 2px solid #808080 !important;
+  box-shadow: 0 1px 0 #ffffff !important;
+  padding-bottom: 4px !important;
+}
+
+html.theme-retro-win95 [data-live-injector="true"] .live-scope-tab-btn {
+  background-color: #c0c0c0 !important;
+  border: 2px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important;
+  box-shadow: 1px 1px 0px #000000 !important;
+  color: #000000 !important;
+  font-weight: normal !important;
+}
+
+html.theme-retro-win95 [data-live-injector="true"] .live-scope-tab-btn:hover {
+  background-color: #d4d0c8 !important;
+}
+
+html.theme-retro-win95 [data-live-injector="true"] .live-scope-tab-btn.is-active {
+  background-color: #ffffff !important;
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 0px #000000 !important;
+  color: #000080 !important;
+  font-weight: bold !important;
+}
+
+html.theme-retro-win95 [data-live-injector="true"] .live-form,
+html.theme-retro-win95 form,
+html.theme-retro-win95 div[id="live-steering-cockpit"] form {
+  background-color: #c0c0c0 !important;
+  border: 2px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important;
+  box-shadow: 1px 1px 0px 0px #000000 !important;
+  color: #000000 !important;
+}
+
+html.theme-retro-win95 [data-live-injector="true"] .live-input-box {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  border: 2px solid !important;
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 0px 0px #000000 !important;
+}
+
+html.theme-retro-win95 [data-live-injector="true"] .live-input-box input,
+html.theme-retro-win95 [data-live-injector="true"] .live-input-field {
+  background: transparent !important;
+  background-color: transparent !important;
+  color: #000000 !important;
+  caret-color: #000000 !important;
+}
+
+html.theme-retro-win95 [data-live-injector="true"] .live-input-box input::placeholder,
+html.theme-retro-win95 [data-live-injector="true"] .live-input-field::placeholder {
+  color: #777777 !important;
+}
+
+html.theme-retro-win95 [data-live-injector="true"] .live-ai-btn {
+  background-color: #c0c0c0 !important;
+  border: 2px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important;
+  box-shadow: 1px 1px 0px #000000 !important;
+  color: #000000 !important;
+}
+
+html.theme-retro-win95 [data-live-injector="true"] .live-ai-btn:hover:not(:disabled) {
+  background-color: #d4d0c8 !important;
+}
+
+html.theme-retro-win95 [data-live-injector="true"] .live-ai-btn:disabled {
+  background-color: #c0c0c0 !important;
+  border-color: #808080 !important;
+  color: #808080 !important;
+  text-shadow: 1px 1px 0 #ffffff !important;
+  box-shadow: none !important;
+  cursor: not-allowed !important;
+}
+
+html.theme-retro-win95 [data-live-injector="true"] .live-ai-btn svg {
+  color: #000000 !important;
+  stroke: #000000 !important;
+}
+
+html.theme-retro-win95 [data-live-injector="true"] .live-ai-btn:disabled svg {
+  color: #808080 !important;
+  stroke: #808080 !important;
+}
+
+/* Win95 Universal Target Badge (Replaces the glowing purple pill in user screenshot) */
+html.theme-retro-win95 [data-live-injector="true"] .live-universal-tag {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  border: 2px solid !important;
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 0px 0px #000000 !important;
+  color: #000080 !important;
+  font-weight: bold !important;
+}
+
+html.theme-retro-win95 [data-live-injector="true"] .live-universal-tag * {
+  color: #000080 !important;
+  stroke: #000080 !important;
+}
+
+html.theme-retro-win95 [data-live-injector="true"] .live-skill-select-container,
+html.theme-retro-win95 [data-live-injector="true"] .live-skill-select,
+html.theme-retro-win95 [data-live-injector="true"] .live-priority-select {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  border: 2px solid !important;
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 0px 0px #000000 !important;
+  color: #000000 !important;
+}
+
+html.theme-retro-win95 [data-live-injector="true"] .live-skill-select option,
+html.theme-retro-win95 [data-live-injector="true"] .live-priority-select option {
+  background: #ffffff !important;
+  color: #000000 !important;
+}
+
+html.theme-retro-win95 [data-live-injector="true"] .live-submit-btn {
+  background: #c0c0c0 !important;
+  background-color: #c0c0c0 !important;
+  background-image: none !important;
+  border: 2px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important;
+  box-shadow: 1px 1px 0px 0px #000000 !important;
+  color: #000000 !important;
+  font-weight: bold !important;
+}
+
+html.theme-retro-win95 [data-live-injector="true"] .live-submit-btn:hover:not(:disabled) {
+  background-color: #d4d0c8 !important;
+}
+
+html.theme-retro-win95 [data-live-injector="true"] .live-submit-btn:active:not(:disabled) {
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 0px 0px #000000 !important;
+}
+
+html.theme-retro-win95 [data-live-injector="true"] .live-submit-btn:disabled {
+  background-color: #c0c0c0 !important;
+  border-color: #808080 !important;
+  color: #808080 !important;
+  text-shadow: 1px 1px 0 #ffffff !important;
+  box-shadow: none !important;
+  cursor: not-allowed !important;
+}
+
+html.theme-retro-win95 [data-live-injector="true"] .live-submit-btn svg {
+  color: #000080 !important;
+  stroke: #000080 !important;
+  fill: none !important;
+}
+
+html.theme-retro-win95 [data-live-injector="true"] .live-submit-btn:disabled svg {
+  color: #808080 !important;
+  stroke: #808080 !important;
+}
+
+html.theme-retro-win95 [data-live-injector="true"] .live-hint-row {
+  border-top: 1px solid #808080 !important;
+  box-shadow: 0 -1px 0 #ffffff !important;
+  color: #222222 !important;
+}
+
+html.theme-retro-win95 [data-live-injector="true"] .live-hint-row * {
+  color: #222222 !important;
+}
+
+/* Injected Directives & Saved Rules Windows 95 Group Panels */
+html.theme-retro-win95 [data-live-injector="true"] .live-directives-container,
+html.theme-retro-win95 [data-live-injector="true"] .live-rules-container {
+  background: #c0c0c0 !important;
+  background-color: #c0c0c0 !important;
+  border: 2px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important;
+  box-shadow: 1px 1px 0px 0px #000000 !important;
+}
+
+html.theme-retro-win95 [data-live-injector="true"] .live-directives-container button,
+html.theme-retro-win95 [data-live-injector="true"] .live-rules-container button {
+  color: #000000 !important;
+}
+
+html.theme-retro-win95 [data-live-injector="true"] .live-directives-container button span,
+html.theme-retro-win95 [data-live-injector="true"] .live-rules-container button span {
+  color: #000080 !important;
+  font-weight: bold !important;
+}
+
+/* Individual Item Cards: Crisp White Sunken Wells with High-Contrast Pure Black Text (Fixes white-on-gray unreadable text) */
+html.theme-retro-win95 [data-live-injector="true"] .live-directive-item,
+html.theme-retro-win95 [data-live-injector="true"] .live-rule-item {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  border: 2px solid !important;
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 0px 0px #000000 !important;
+}
+
+html.theme-retro-win95 [data-live-injector="true"] .live-directive-content,
+html.theme-retro-win95 [data-live-injector="true"] .live-rule-content {
+  color: #000000 !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  line-height: 1.5 !important;
+}
+
+html.theme-retro-win95 [data-live-injector="true"] .live-directive-priority,
+html.theme-retro-win95 [data-live-injector="true"] .live-rule-priority {
+  border-radius: 0px !important;
+  font-weight: bold !important;
+  font-size: 9px !important;
+  border: 1px solid #808080 !important;
+  box-shadow: inset 1px 1px 0 #ffffff !important;
+}
+
+html.theme-retro-win95 [data-live-injector="true"] .live-directive-skill-btn,
+html.theme-retro-win95 [data-live-injector="true"] .live-rule-skill-btn {
+  background-color: #dfdfdf !important;
+  border: 1px solid #808080 !important;
+  box-shadow: inset 1px 1px 0 #ffffff !important;
+  color: #000000 !important;
+}
+
+html.theme-retro-win95 [data-live-injector="true"] .live-directive-skill-btn *,
+html.theme-retro-win95 [data-live-injector="true"] .live-rule-skill-btn * {
+  color: #000000 !important;
+}
+
+html.theme-retro-win95 [data-live-injector="true"] .live-directive-action-btn,
+html.theme-retro-win95 [data-live-injector="true"] .live-rule-action-btn {
+  background-color: #c0c0c0 !important;
+  border: 2px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important;
+  box-shadow: 1px 1px 0px 0px #000000 !important;
+  color: #000000 !important;
+}
+
+html.theme-retro-win95 [data-live-injector="true"] .live-directive-action-btn:hover,
+html.theme-retro-win95 [data-live-injector="true"] .live-rule-action-btn:hover {
+  background-color: #d4d0c8 !important;
+}
+
+html.theme-retro-win95 [data-live-injector="true"] .live-directive-action-btn:active,
+html.theme-retro-win95 [data-live-injector="true"] .live-rule-action-btn:active {
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 0px 0px #000000 !important;
+}
+
+html.theme-retro-win95 [data-live-injector="true"] .live-directive-action-btn *,
+html.theme-retro-win95 [data-live-injector="true"] .live-rule-action-btn * {
+  color: #000000 !important;
+  stroke: #000000 !important;
+}
+
+/* 11. Replace round pulsing dots with Hardware Square Power LEDs (only tiny indicators, never text badges) */
+html.theme-retro-win95 span[class*="rounded-full"][class*="w-1.5"],
+html.theme-retro-win95 span[class*="rounded-full"][class*="w-2"],
+html.theme-retro-win95 span[class*="rounded-full"][class*="animate-pulse"] {
+  border-radius: 0px !important;
+  background-color: #00ff00 !important;
+  border: 1px solid #000000 !important;
+  box-shadow: inset 1px 1px 0 #ffffff !important;
+  width: 7px !important;
+  height: 7px !important;
+  animation: none !important;
+}
+
+/* Vault Modal (本地技能备份与存储) Win95/98 High-Contrast Retro Skin */
+html.theme-retro-win95 div[data-vault-modal="true"] {
+  background-color: #c0c0c0 !important;
+  color: #000000 !important;
+  border: 3px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important;
+  box-shadow: 2px 2px 0px 0px #000000 !important;
+  border-radius: 0px !important;
+}
+html.theme-retro-win95 div[data-vault-modal="true"] .vault-summary-box {
+  background-color: #ffffff !important;
+  border: 2px solid !important;
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 0px #000000 !important;
+  border-radius: 0px !important;
+}
+html.theme-retro-win95 div[data-vault-modal="true"] .vault-summary-box * {
+  color: #000000 !important;
+}
+html.theme-retro-win95 div[data-vault-modal="true"] .vault-badge {
+  background-color: #000080 !important;
+  color: #ffffff !important;
+  border: 1px solid #000000 !important;
+  border-radius: 0px !important;
+  padding: 2px 8px !important;
+  font-weight: bold !important;
+  font-family: inherit !important;
+  width: auto !important;
+  height: auto !important;
+}
+html.theme-retro-win95 div[data-vault-modal="true"] .vault-action-btn {
+  background-color: #c0c0c0 !important;
+  border: 2px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important;
+  box-shadow: 1px 1px 0px #000000 !important;
+  border-radius: 0px !important;
+  color: #000000 !important;
+}
+html.theme-retro-win95 div[data-vault-modal="true"] .vault-action-btn:hover {
+  background-color: #d4d0c8 !important;
+}
+html.theme-retro-win95 div[data-vault-modal="true"] .vault-action-btn:active {
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 0px #000000 !important;
+  transform: translate(1px, 1px);
+}
+html.theme-retro-win95 div[data-vault-modal="true"] .vault-action-btn * {
+  color: #000000 !important;
+}
+html.theme-retro-win95 div[data-vault-modal="true"] .vault-action-btn svg {
+  color: #000080 !important;
+}
+html.theme-retro-win95 div[data-vault-modal="true"] .vault-target-item {
+  background-color: #ffffff !important;
+  border: 2px solid !important;
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 0px #000000 !important;
+  border-radius: 0px !important;
+}
+html.theme-retro-win95 div[data-vault-modal="true"] .vault-target-item * {
+  color: #000000 !important;
+}
+html.theme-retro-win95 div[data-vault-modal="true"] .vault-target-status-ready {
+  color: #008000 !important;
+  font-weight: bold !important;
+}
+html.theme-retro-win95 div[data-vault-modal="true"] .vault-target-status-plug {
+  color: #555555 !important;
+  font-weight: 500 !important;
+}
+html.theme-retro-win95 div[data-vault-modal="true"] h4 {
+  color: #000000 !important;
+  font-weight: bold !important;
+}
+html.theme-retro-win95 div[data-vault-modal="true"] .vault-footer {
+  background-color: #c0c0c0 !important;
+  border-top: 2px solid !important;
+  border-color: #808080 !important;
+  border-radius: 0px !important;
+}
+html.theme-retro-win95 div[data-vault-modal="true"] .vault-footer * {
+  color: #333333 !important;
+  font-weight: 500 !important;
+}
+
+/* AI Core Models & BYOK Settings Modal (AI 核心模型与 BYOK 凭证) Win95/98 Retro Skin */
+html.theme-retro-win95 div[data-settings-modal="true"] {
+  background-color: #c0c0c0 !important;
+  color: #000000 !important;
+  border: 3px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important;
+  box-shadow: 2px 2px 0px 0px #000000 !important;
+  border-radius: 0px !important;
+}
+
+html.theme-retro-win95 div[data-settings-modal="true"] * {
+  border-radius: 0px !important;
+}
+
+/* Modal Titlebar: Classic Windows 95 Navy Titlebar */
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-modal-header {
+  background: linear-gradient(90deg, #000080 0%, #1084d0 100%) !important;
+  border-bottom: 2px solid #808080 !important;
+  box-shadow: inset 0 1px 0 #ffffff !important;
+  padding: 6px 10px !important;
+}
+
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-header-icon {
+  background: transparent !important;
+  border: none !important;
+  color: #ffffff !important;
+  padding: 0 !important;
+}
+
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-header-icon svg {
+  stroke: #ffffff !important;
+}
+
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-header-title {
+  color: #ffffff !important;
+  font-weight: bold !important;
+  font-size: 13px !important;
+  text-shadow: 1px 1px 0px #000040 !important;
+}
+
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-header-subtitle {
+  color: #c0d8ff !important;
+  font-size: 11px !important;
+}
+
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-close-btn {
+  background-color: #c0c0c0 !important;
+  border: 2px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important;
+  box-shadow: 1px 1px 0px #000000 !important;
+  color: #000000 !important;
+  padding: 1px 4px !important;
+}
+
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-close-btn:active {
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 0px #000000 !important;
+}
+
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-close-btn svg {
+  stroke: #000000 !important;
+}
+
+/* Tip Banner: Pure White Sunken Well with High-Contrast Navy & Black Text */
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-tip-banner {
+  background-color: #ffffff !important;
+  border: 2px solid !important;
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 0px #000000 !important;
+}
+
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-tip-banner span {
+  color: #000000 !important;
+  font-weight: 500 !important;
+  font-size: 11px !important;
+}
+
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-tip-banner svg {
+  color: #000080 !important;
+  stroke: #000080 !important;
+}
+
+/* Engine Selection Label */
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-engine-label {
+  color: #000000 !important;
+  font-weight: bold !important;
+}
+
+/* Provider Tabs (Gemini, Claude, OpenAI, DeepSeek, etc.) */
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-provider-tab {
+  background-color: #c0c0c0 !important;
+  border: 2px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important;
+  box-shadow: 1px 1px 0px #000000 !important;
+  color: #000000 !important;
+  font-weight: bold !important;
+}
+
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-provider-tab:hover {
+  background-color: #d4d0c8 !important;
+}
+
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-provider-tab.is-active {
+  background-color: #ffffff !important;
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 0px #000000 !important;
+  color: #000080 !important;
+  font-weight: bold !important;
+}
+
+/* Provider Sub-Badges (Google, Anthropic, GPT/Codex, V3/R1, 聚合网关, abab/M01, OpenAI 协议) */
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-provider-badge {
+  background-color: #dfdfdf !important;
+  border: 1px solid #808080 !important;
+  box-shadow: inset 1px 1px 0px #ffffff !important;
+  color: #000000 !important;
+  font-weight: bold !important;
+}
+
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-provider-tab.is-active .settings-provider-badge {
+  background-color: #000080 !important;
+  border: 1px solid #000000 !important;
+  box-shadow: none !important;
+  color: #ffffff !important;
+  font-weight: bold !important;
+}
+
+/* Form Container in Microsoft Gray */
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-form-container {
+  background-color: #c0c0c0 !important;
+  border: 2px solid !important;
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 0px #000000 !important;
+}
+
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-form-container label {
+  color: #000000 !important;
+  font-weight: bold !important;
+}
+
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-form-container span {
+  color: #000000 !important;
+}
+
+/* Keyring Status Badge (🔒 已存入钥匙串) & Clear button */
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-form-container span:has(> button),
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-form-container span.text-emerald-400 {
+  color: #006000 !important;
+  font-weight: bold !important;
+}
+
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-form-container button[class*="text-rose-400"] {
+  background-color: #c0c0c0 !important;
+  border: 1px solid #808080 !important;
+  box-shadow: 1px 1px 0px #000000 !important;
+  color: #800000 !important;
+  font-weight: bold !important;
+  padding: 0 4px !important;
+  margin-left: 4px !important;
+}
+
+/* External documentation links (aistudio.google.com, platform.minimaxi.com, etc.) */
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-form-container a {
+  color: #000080 !important;
+  font-weight: bold !important;
+  text-decoration: underline !important;
+}
+
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-form-container a svg {
+  stroke: #000080 !important;
+}
+
+/* Form Inputs (Sunken White Wells) */
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-form-container input {
+  background-color: #ffffff !important;
+  border: 2px solid !important;
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 0px #000000 !important;
+  color: #000000 !important;
+  caret-color: #000000 !important;
+  font-weight: 500 !important;
+}
+
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-form-container input::placeholder {
+  color: #666666 !important;
+}
+
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-form-container button:has(> svg.lucide-eye),
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-form-container button:has(> svg.lucide-eye-off) {
+  color: #000000 !important;
+}
+
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-form-container button:has(> svg.lucide-eye) svg,
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-form-container button:has(> svg.lucide-eye-off) svg {
+  stroke: #000000 !important;
+}
+
+/* Station Buttons (国内主站 / 国际站) */
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-station-btn {
+  background-color: #c0c0c0 !important;
+  border: 2px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important;
+  box-shadow: 1px 1px 0px #000000 !important;
+  color: #000000 !important;
+}
+
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-station-btn:hover {
+  background-color: #d4d0c8 !important;
+}
+
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-station-btn span {
+  color: #000000 !important;
+}
+
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-station-btn .settings-station-url {
+  color: #222222 !important;
+  font-weight: bold !important;
+}
+
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-station-btn.is-active {
+  background-color: #ffffff !important;
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 0px #000000 !important;
+  color: #000080 !important;
+}
+
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-station-btn.is-active span {
+  color: #000080 !important;
+}
+
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-station-badge {
+  background-color: #000080 !important;
+  color: #ffffff !important;
+  border: 1px solid #000000 !important;
+  font-weight: bold !important;
+}
+
+/* Model quick select pills & recommended endpoints buttons */
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-form-container div.flex-wrap button,
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-form-container div.grid-cols-1 button {
+  background-color: #c0c0c0 !important;
+  border: 2px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important;
+  box-shadow: 1px 1px 0px #000000 !important;
+  color: #000000 !important;
+  font-weight: bold !important;
+}
+
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-form-container div.flex-wrap button:hover,
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-form-container div.grid-cols-1 button:hover {
+  background-color: #d4d0c8 !important;
+}
+
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-form-container div.flex-wrap button[class*="bg-indigo-600"],
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-form-container div.grid-cols-1 button[class*="bg-indigo-600"] {
+  background-color: #ffffff !important;
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 0px #000000 !important;
+  color: #000080 !important;
+  font-weight: bold !important;
+}
+
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-form-container div.flex-wrap button[class*="bg-indigo-600"] *,
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-form-container div.grid-cols-1 button[class*="bg-indigo-600"] * {
+  color: #000080 !important;
+}
+
+/* Footer & Action Buttons */
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-modal-footer {
+  background-color: #c0c0c0 !important;
+  border-top: 2px solid #808080 !important;
+  box-shadow: inset 0 1px 0 #ffffff !important;
+}
+
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-test-btn,
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-cancel-btn,
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-save-btn {
+  background-color: #c0c0c0 !important;
+  border: 2px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important;
+  box-shadow: 1px 1px 0px #000000 !important;
+  color: #000000 !important;
+  font-weight: bold !important;
+}
+
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-test-btn:hover,
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-cancel-btn:hover,
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-save-btn:hover {
+  background-color: #d4d0c8 !important;
+}
+
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-test-btn:active,
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-cancel-btn:active,
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-save-btn:active {
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 0px #000000 !important;
+}
+
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-test-btn *,
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-cancel-btn *,
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-save-btn * {
+  color: #000000 !important;
+  stroke: #000000 !important;
+}
+
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-save-btn {
+  color: #000080 !important;
+}
+
+html.theme-retro-win95 div[data-settings-modal="true"] .settings-save-btn * {
+  color: #000080 !important;
+  stroke: #000080 !important;
+}
+
+/* 11.5. Floating Workspace Popover Inspector (工作区雷达看板) */
+html.theme-retro-win95 div[data-workspace-popover="true"] {
+  border-radius: 0px !important;
+  background-color: #c0c0c0 !important;
+  border: 3px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important;
+  box-shadow: 2px 2px 0px 0px #000000 !important;
+  color: #000000 !important;
+  z-index: 9999 !important;
+}
+html.theme-retro-win95 div[data-workspace-popover="true"] .workspace-popover-header {
+  background: linear-gradient(90deg, #000080 0%, #1084d0 100%) !important;
+  color: #ffffff !important;
+  padding: 5px 8px !important;
+  margin: -1rem -1rem 0.5rem -1rem !important;
+  border-bottom: 2px solid #808080 !important;
+}
+html.theme-retro-win95 div[data-workspace-popover="true"] .workspace-popover-header * {
+  color: #ffffff !important;
+}
+html.theme-retro-win95 div[data-workspace-popover="true"] .workspace-popover-header button {
+  background-color: #c0c0c0 !important;
+  border: 2px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important;
+  box-shadow: 1px 1px 0 #000000 !important;
+  color: #000000 !important;
+  font-weight: bold !important;
+  padding: 0 4px !important;
+  width: 18px !important;
+  height: 18px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+html.theme-retro-win95 div[data-workspace-popover="true"] .workspace-popover-header button * {
+  color: #000000 !important;
+}
+html.theme-retro-win95 div[data-workspace-popover="true"] .radar-title {
+  color: #000000 !important;
+  font-weight: bold !important;
+}
+html.theme-retro-win95 div[data-workspace-popover="true"] .radar-count-total {
+  color: #000080 !important;
+  font-weight: bold !important;
+}
+
+/* 11.6. Skill Doctor Modal (智能体检与优化) Win95/98 High-Contrast Retro Skin */
+html.theme-retro-win95 div[data-doctor-modal="true"] {
+  background-color: #c0c0c0 !important;
+  color: #000000 !important;
+  border-right: 3px solid #808080 !important;
+  box-shadow: 2px 0px 0px #000000 !important;
+  border-radius: 0px !important;
+}
+
+/* Doctor Select & Target Toolbar */
+html.theme-retro-win95 div[data-doctor-modal="true"] select {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid !important;
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 0 #000000 !important;
+  border-radius: 0px !important;
+}
+
+html.theme-retro-win95 div[data-doctor-modal="true"] button {
+  border-radius: 0px !important;
+}
+
+html.theme-retro-win95 div[data-doctor-modal="true"] button.bg-purple-600 {
+  background: #000080 !important;
+  color: #ffffff !important;
+  border: 2px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important;
+  box-shadow: 1px 1px 0 #000000 !important;
+}
+
+html.theme-retro-win95 div[data-doctor-modal="true"] button.bg-purple-600 * {
+  color: #ffffff !important;
+}
+
+/* Hero card (AI 完善与扩充) */
+html.theme-retro-win95 div[data-doctor-modal="true"] .bg-gradient-to-r.from-purple-950\/70 {
+  background: #c0c0c0 !important;
+  border: 2px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important;
+  box-shadow: 1px 1px 0 #000000 !important;
+  border-radius: 0px !important;
+}
+html.theme-retro-win95 div[data-doctor-modal="true"] .bg-gradient-to-r.from-purple-950\/70 * {
+  color: #000000 !important;
+}
+html.theme-retro-win95 div[data-doctor-modal="true"] .bg-gradient-to-r.from-purple-950\/70 button:first-child {
+  background: linear-gradient(90deg, #000080 0%, #1084d0 100%) !important;
+  color: #ffffff !important;
+  border: 2px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important;
+  box-shadow: 1px 1px 0 #000000 !important;
+  border-radius: 0px !important;
+}
+html.theme-retro-win95 div[data-doctor-modal="true"] .bg-gradient-to-r.from-purple-950\/70 button:first-child * {
+  color: #ffffff !important;
+}
+
+/* Active Target File Banner - Win95 Sunken Well */
+html.theme-retro-win95 div[data-doctor-modal="true"] .doctor-file-banner {
+  background-color: #ffffff !important;
+  border: 2px solid !important;
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 0px #000000 !important;
+  border-radius: 0px !important;
+  color: #000000 !important;
+}
+html.theme-retro-win95 div[data-doctor-modal="true"] .doctor-file-banner * {
+  color: #000000 !important;
+}
+html.theme-retro-win95 div[data-doctor-modal="true"] .doctor-file-banner span.font-mono.font-bold {
+  color: #000080 !important;
+}
+html.theme-retro-win95 div[data-doctor-modal="true"] .doctor-file-banner button {
+  background-color: #c0c0c0 !important;
+  border: 2px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important;
+  box-shadow: 1px 1px 0px 0px #000000 !important;
+  border-radius: 0px !important;
+  color: #000000 !important;
+}
+
+/* Review Card (AI 编写质量深度研判) - Pure White Sunken Well */
+html.theme-retro-win95 div[data-doctor-modal="true"] .doctor-review-card {
+  background-color: #ffffff !important;
+  border: 2px solid !important;
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 0px #000000 !important;
+  border-radius: 0px !important;
+}
+html.theme-retro-win95 div[data-doctor-modal="true"] .doctor-review-title {
+  color: #000080 !important;
+  font-weight: 800 !important;
+}
+html.theme-retro-win95 div[data-doctor-modal="true"] .doctor-review-badge {
+  background-color: #000080 !important;
+  color: #ffffff !important;
+  border: 1px solid #000000 !important;
+  border-radius: 0px !important;
+  font-weight: bold !important;
+}
+html.theme-retro-win95 div[data-doctor-modal="true"] .doctor-review-content {
+  background-color: #f5f5f5 !important;
+  border: 1px solid #808080 !important;
+  color: #000000 !important;
+  font-weight: 600 !important;
+  border-radius: 0px !important;
+}
+
+/* Score Card & 5-Dimension Matrix - Pure White Sunken Wells */
+html.theme-retro-win95 div[data-doctor-modal="true"] .doctor-score-card,
+html.theme-retro-win95 div[data-doctor-modal="true"] .doctor-matrix-card {
+  background-color: #ffffff !important;
+  border: 2px solid !important;
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 0px #000000 !important;
+  border-radius: 0px !important;
+}
+html.theme-retro-win95 div[data-doctor-modal="true"] .doctor-score-title {
+  color: #000000 !important;
+  font-weight: 800 !important;
+}
+html.theme-retro-win95 div[data-doctor-modal="true"] .doctor-score-val {
+  color: #008000 !important;
+  font-weight: 900 !important;
+}
+html.theme-retro-win95 div[data-doctor-modal="true"] .doctor-score-val span {
+  color: #555555 !important;
+  font-weight: normal !important;
+}
+html.theme-retro-win95 div[data-doctor-modal="true"] .doctor-score-grade {
+  background-color: #000080 !important;
+  color: #ffffff !important;
+  border: 1px solid #000000 !important;
+  border-radius: 0px !important;
+  font-weight: bold !important;
+}
+html.theme-retro-win95 div[data-doctor-modal="true"] .doctor-score-sub {
+  color: #555555 !important;
+  font-weight: bold !important;
+}
+html.theme-retro-win95 div[data-doctor-modal="true"] .doctor-matrix-title {
+  color: #000080 !important;
+  font-weight: 800 !important;
+}
+html.theme-retro-win95 div[data-doctor-modal="true"] .doctor-matrix-max {
+  color: #555555 !important;
+  font-weight: bold !important;
+}
+html.theme-retro-win95 div[data-doctor-modal="true"] .doctor-dim-label {
+  color: #000000 !important;
+  font-weight: 700 !important;
+}
+html.theme-retro-win95 div[data-doctor-modal="true"] .doctor-dim-val {
+  color: #000080 !important;
+  font-weight: 800 !important;
+}
+html.theme-retro-win95 div[data-doctor-modal="true"] .doctor-progress-track {
+  background-color: #d4d0c8 !important;
+  border: 1px solid #808080 !important;
+  border-radius: 0px !important;
+  height: 8px !important;
+}
+html.theme-retro-win95 div[data-doctor-modal="true"] .doctor-progress-fill {
+  background-color: #000080 !important;
+  border-radius: 0px !important;
+}
+
+/* Issues Checklist */
+html.theme-retro-win95 div[data-doctor-modal="true"] .doctor-issues-title {
+  color: #000000 !important;
+  font-weight: 800 !important;
+}
+html.theme-retro-win95 div[data-doctor-modal="true"] .doctor-issue-item {
+  background-color: #ffffff !important;
+  border: 2px solid !important;
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 0px #000000 !important;
+  border-radius: 0px !important;
+}
+html.theme-retro-win95 div[data-doctor-modal="true"] .doctor-issue-name {
+  color: #000000 !important;
+  font-weight: 800 !important;
+}
+html.theme-retro-win95 div[data-doctor-modal="true"] .doctor-issue-dim {
+  color: #000080 !important;
+  font-weight: bold !important;
+}
+html.theme-retro-win95 div[data-doctor-modal="true"] .doctor-issue-desc {
+  color: #222222 !important;
+  font-weight: 500 !important;
+}
+html.theme-retro-win95 div[data-doctor-modal="true"] .doctor-issue-badge {
+  border-radius: 0px !important;
+  border: 1px solid #000000 !important;
+  font-weight: 800 !important;
+  width: auto !important;
+  height: auto !important;
+}
+html.theme-retro-win95 div[data-doctor-modal="true"] .doctor-issue-badge[class*="bg-emerald"] {
+  background-color: #008000 !important;
+  color: #ffffff !important;
+}
+html.theme-retro-win95 div[data-doctor-modal="true"] .doctor-issue-badge[class*="bg-red"] {
+  background-color: #cc0000 !important;
+  color: #ffffff !important;
+}
+html.theme-retro-win95 div[data-doctor-modal="true"] .doctor-issue-badge[class*="bg-amber"] {
+  background-color: #b8860b !important;
+  color: #ffffff !important;
+}
+
+/* Doctor File Banner in Retro Mode */
+html.theme-retro-win95 div[data-doctor-modal="true"] .doctor-file-banner {
+  background-color: #ffffff !important;
+  border: 2px solid !important;
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 0px #000000 !important;
+  border-radius: 0px !important;
+  color: #000000 !important;
+}
+html.theme-retro-win95 div[data-doctor-modal="true"] .doctor-file-banner span {
+  color: #000000 !important;
+}
+html.theme-retro-win95 div[data-doctor-modal="true"] .doctor-file-banner button {
+  background-color: #c0c0c0 !important;
+  border: 2px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important;
+  box-shadow: 1px 1px 0px #000000 !important;
+  border-radius: 0px !important;
+  color: #000000 !important;
+}
+html.theme-retro-win95 div[data-doctor-modal="true"] .doctor-file-banner button * {
+  color: #000000 !important;
+}
+
+/* Compact Skill List in Windows 98 Mode (Classic Explorer Details View) */
+html.theme-retro-win95 div[data-skill-compact="true"] {
+  background-color: #ffffff !important;
+  border: 1px solid #d4d0c8 !important;
+  border-bottom: 1px solid #808080 !important;
+  border-radius: 0px !important;
+  box-shadow: none !important;
+  color: #000000 !important;
+}
+html.theme-retro-win95 div[data-skill-compact="true"]:hover {
+  background-color: #000080 !important;
+  color: #ffffff !important;
+}
+html.theme-retro-win95 div[data-skill-compact="true"]:hover * {
+  color: #ffffff !important;
+}
+html.theme-retro-win95 div[data-skill-compact="true"]:hover svg {
+  stroke: #ffffff !important;
+}
+html.theme-retro-win95 div[data-skill-compact="true"] button {
+  background-color: #c0c0c0 !important;
+  border: 2px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important;
+  box-shadow: 1px 1px 0px #000000 !important;
+  border-radius: 0px !important;
+  color: #000000 !important;
+}
+html.theme-retro-win95 div[data-skill-compact="true"] button * {
+  color: #000000 !important;
+}
+
+/* Retro Empty State in Windows 98 Mode */
+html.theme-retro-win95 div[data-retro-empty="true"] {
+  background-color: #ffffff !important;
+  border: 2px solid !important;
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 0px #000000 !important;
+  border-radius: 0px !important;
+  color: #000000 !important;
+}
+html.theme-retro-win95 div[data-retro-empty="true"] * {
+  color: #000000 !important;
+}
+html.theme-retro-win95 div[data-retro-empty="true"] button {
+  background-color: #c0c0c0 !important;
+  border: 2px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important;
+  box-shadow: 1px 1px 0px #000000 !important;
+  border-radius: 0px !important;
+  color: #000000 !important;
+}
+
+/* 12. Popovers & Modals (Windows 98 Active Dialog Window) */
+html.theme-retro-win95 .glass-panel,
+html.theme-retro-win95 div[class*="fixed"][class*="z-50"] > div {
+  border-radius: 0px !important;
+  background-color: #c0c0c0 !important;
+  border: 3px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important;
+  box-shadow: 2px 2px 0px 0px #000000 !important;
+  color: #000000 !important;
+}
+html.theme-retro-win95 div[class*="fixed"][class*="z-50"] > div > div:first-child,
+html.theme-retro-win95 div[class*="fixed"][class*="z-50"] > div header {
+  background: linear-gradient(90deg, #000080 0%, #1084d0 100%) !important;
+  color: #ffffff !important;
+  padding: 6px 10px !important;
+  font-weight: 700 !important;
+  border-bottom: 2px solid #808080 !important;
+}
+html.theme-retro-win95 div[class*="fixed"][class*="z-50"] > div > div:first-child *,
+html.theme-retro-win95 div[class*="fixed"][class*="z-50"] > div header * {
+  color: #ffffff !important;
+}
+html.theme-retro-win95 div[class*="fixed"][class*="z-50"] > div > div:first-child button,
+html.theme-retro-win95 div[class*="fixed"][class*="z-50"] > div header button {
+  background-color: #c0c0c0 !important;
+  border: 2px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important;
+  box-shadow: 1px 1px 0 #000000 !important;
+  color: #000000 !important;
+  font-weight: bold !important;
+  padding: 1px 6px !important;
+}
+html.theme-retro-win95 div[class*="fixed"][class*="z-50"] > div > div:first-child button *,
+html.theme-retro-win95 div[class*="fixed"][class*="z-50"] > div header button * {
+  color: #000000 !important;
+}
+
+/* 13. Markdown Reader & Skill Editor Preview in Win95/98 Mode (MSDN / WinHlp32 Document Canvas) */
+html.theme-retro-win95 .markdown-reader {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  padding: 2rem !important;
+  border: 2px solid !important;
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 0px 0px #000000 !important;
+  border-radius: 0px !important;
+  min-height: 100% !important;
+}
+
+/* Ensure the outer preview container in SkillEditorModal is Microsoft Gray with inset well */
+html.theme-retro-win95 div:has(> .markdown-reader),
+html.theme-retro-win95 .bg-\[\#0c0e17\] {
+  background-color: #c0c0c0 !important;
+}
+
+/* Headings in Classic Windows Navy (#000080) */
+html.theme-retro-win95 .markdown-reader h1,
+html.theme-retro-win95 .markdown-reader h2,
+html.theme-retro-win95 .markdown-reader h3,
+html.theme-retro-win95 .markdown-reader h4,
+html.theme-retro-win95 .markdown-reader h5,
+html.theme-retro-win95 .markdown-reader h6 {
+  color: #000080 !important;
+  font-weight: 800 !important;
+  border-bottom: 2px solid #808080 !important;
+  padding-bottom: 6px !important;
+  margin-top: 1.5rem !important;
+  margin-bottom: 0.85rem !important;
+}
+
+/* Body Text, Paragraphs, Lists */
+html.theme-retro-win95 .markdown-reader p,
+html.theme-retro-win95 .markdown-reader li,
+html.theme-retro-win95 .markdown-reader span,
+html.theme-retro-win95 .markdown-reader div {
+  color: #000000 !important;
+  line-height: 1.75 !important;
+}
+
+/* Bold / Strong Text: Crisp Jet Black (#000000) */
+html.theme-retro-win95 .markdown-reader strong,
+html.theme-retro-win95 .markdown-reader b {
+  color: #000000 !important;
+  font-weight: 800 !important;
+}
+
+/* Hyperlinks: Classic Internet Explorer 4.0 Royal Blue (#0000cc) */
+html.theme-retro-win95 .markdown-reader a {
+  color: #0000cc !important;
+  text-decoration: underline !important;
+  text-underline-offset: 2px !important;
+  font-weight: 600 !important;
+}
+html.theme-retro-win95 .markdown-reader a:hover {
+  color: #cc0000 !important;
+}
+
+/* Blockquotes / Callout Boxes: Classic Light Sunken Callout Well */
+html.theme-retro-win95 .markdown-reader blockquote {
+  background-color: #f2f2f2 !important;
+  border-left: 5px solid #000080 !important;
+  border-top: 1px solid #c0c0c0 !important;
+  border-right: 1px solid #c0c0c0 !important;
+  border-bottom: 1px solid #c0c0c0 !important;
+  color: #000000 !important;
+  padding: 0.85rem 1.15rem !important;
+  margin: 1.25rem 0 !important;
+}
+html.theme-retro-win95 .markdown-reader blockquote * {
+  color: #000000 !important;
+}
+
+/* Tables: Classic Win95 GridView Table with Dark Header & High-Contrast Rows */
+html.theme-retro-win95 .markdown-reader table {
+  background-color: #ffffff !important;
+  border-collapse: collapse !important;
+  border: 2px solid #808080 !important;
+  margin: 1.25rem 0 !important;
+  width: 100% !important;
+}
+html.theme-retro-win95 .markdown-reader th {
+  background-color: #dfdfdf !important;
+  color: #000000 !important;
+  font-weight: 700 !important;
+  border: 1px solid #808080 !important;
+  padding: 8px 12px !important;
+  text-align: left !important;
+}
+html.theme-retro-win95 .markdown-reader td {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border: 1px solid #c0c0c0 !important;
+  padding: 8px 12px !important;
+}
+html.theme-retro-win95 .markdown-reader tr:nth-child(even) td {
+  background-color: #f7f7f7 !important;
+}
+
+/* Code Blocks */
+html.theme-retro-win95 .markdown-reader pre {
+  background-color: #ffffff !important;
+  border: 2px solid !important;
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 0px 0px #000000 !important;
+  color: #000000 !important;
+  border-radius: 0px !important;
+  padding: 0.85rem 1.15rem !important;
+}
+html.theme-retro-win95 .markdown-reader pre code {
+  color: #000000 !important;
+  font-family: 'Consolas', 'Courier New', monospace !important;
+}
+html.theme-retro-win95 .markdown-reader code:not(pre code) {
+  color: #000080 !important;
+  background-color: #f0f0f0 !important;
+  border: 1px solid #c0c0c0 !important;
+  padding: 1px 5px !important;
+  border-radius: 0px !important;
+  font-family: 'Consolas', 'Courier New', monospace !important;
+  font-weight: 600 !important;
+}
+
+/* 14. Rookie Guide Modal (新手通关学院) in Windows 95/98 Series */
+html.theme-retro-win95 [data-rookie-modal="true"] {
+  background-color: #c0c0c0 !important;
+  border: 3px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important;
+  box-shadow: 2px 2px 0px 0px #000000 !important;
+  border-radius: 0px !important;
+  color: #000000 !important;
+}
+
+/* Modal Titlebar */
+html.theme-retro-win95 [data-rookie-modal="true"] > div:first-child {
+  background: linear-gradient(90deg, #000080 0%, #1084d0 100%) !important;
+  color: #ffffff !important;
+  border-bottom: 2px solid #808080 !important;
+  border-radius: 0px !important;
+  padding: 6px 10px !important;
+}
+html.theme-retro-win95 [data-rookie-modal="true"] > div:first-child * {
+  color: #ffffff !important;
+}
+html.theme-retro-win95 [data-rookie-modal="true"] > div:first-child button {
+  background-color: #c0c0c0 !important;
+  border: 2px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important;
+  box-shadow: 1px 1px 0 #000000 !important;
+  color: #000000 !important;
+  border-radius: 0px !important;
+}
+html.theme-retro-win95 [data-rookie-modal="true"] > div:first-child button * {
+  color: #000000 !important;
+}
+
+/* 3-Tab Navigator as Classic Win95/98 PropertySheet Tabs */
+html.theme-retro-win95 [data-rookie-modal="true"] > div:nth-child(2) {
+  background-color: #c0c0c0 !important;
+  border-bottom: 2px solid #ffffff !important;
+  padding-top: 4px !important;
+}
+html.theme-retro-win95 [data-rookie-modal="true"] > div:nth-child(2) button {
+  background-color: #dfdfdf !important;
+  border-radius: 0px !important;
+  border: 2px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important;
+  margin-bottom: -2px !important;
+  font-weight: 700 !important;
+  color: #000000 !important;
+}
+html.theme-retro-win95 [data-rookie-modal="true"] > div:nth-child(2) button * {
+  color: #000000 !important;
+}
+html.theme-retro-win95 [data-rookie-modal="true"] > div:nth-child(2) button[class*="bg-amber-500"],
+html.theme-retro-win95 [data-rookie-modal="true"] > div:nth-child(2) button[class*="shadow-amber"] {
+  background-color: #c0c0c0 !important;
+  border-bottom-color: #c0c0c0 !important;
+  font-weight: 800 !important;
+}
+
+/* Modal Content Area */
+html.theme-retro-win95 [data-rookie-modal="true"] .overflow-y-auto {
+  background-color: #c0c0c0 !important;
+}
+
+/* All Inner Cards, Boxes, Comparisons, Step Boxes: Pure White Sunken Wells with 100% Crisp Black Text */
+html.theme-retro-win95 [data-rookie-modal="true"] .bg-\[\#0e111e\],
+html.theme-retro-win95 [data-rookie-modal="true"] .bg-\[\#090b14\],
+html.theme-retro-win95 [data-rookie-modal="true"] .bg-\[\#090b14\]\/70,
+html.theme-retro-win95 [data-rookie-modal="true"] div[class*="bg-\[\#0e111e\]"],
+html.theme-retro-win95 [data-rookie-modal="true"] div[class*="bg-\[\#090b14\]"] {
+  background-color: #ffffff !important;
+  border: 2px solid !important;
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 0px 0px #000000 !important;
+  border-radius: 0px !important;
+  color: #000000 !important;
+}
+
+/* Ensure ALL texts inside cards are pure jet black */
+html.theme-retro-win95 [data-rookie-modal="true"] .bg-\[\#0e111e\] *,
+html.theme-retro-win95 [data-rookie-modal="true"] .bg-\[\#090b14\] *,
+html.theme-retro-win95 [data-rookie-modal="true"] .bg-\[\#090b14\]\/70 *,
+html.theme-retro-win95 [data-rookie-modal="true"] ul *,
+html.theme-retro-win95 [data-rookie-modal="true"] li * {
+  color: #000000 !important;
+}
+
+/* Headings in Rookie Modal: Navy Blue #000080 */
+html.theme-retro-win95 [data-rookie-modal="true"] h3,
+html.theme-retro-win95 [data-rookie-modal="true"] h4 {
+  color: #000080 !important;
+  font-weight: 800 !important;
+}
+html.theme-retro-win95 [data-rookie-modal="true"] p {
+  color: #000000 !important;
+}
+
+/* Tag Pills (❌ 传统对话窗口 vs 技能规范) */
+html.theme-retro-win95 [data-rookie-modal="true"] span[class*="border"] {
+  background-color: #dfdfdf !important;
+  border: 1px solid #808080 !important;
+  border-radius: 0px !important;
+  color: #000000 !important;
+  font-weight: 700 !important;
+}
+
+/* Bottom Takeaway / Pro Tip Boxes (💡 一句话总结 / 💡 进阶小贴士) */
+html.theme-retro-win95 [data-rookie-modal="true"] div[class*="from-amber"],
+html.theme-retro-win95 [data-rookie-modal="true"] div[class*="from-amber"] *,
+html.theme-retro-win95 [data-rookie-modal="true"] div[class*="bg-indigo-950"],
+html.theme-retro-win95 [data-rookie-modal="true"] div[class*="bg-indigo-950"] * {
+  background-image: none !important;
+  background-color: #dfdfdf !important;
+  border: 2px solid !important;
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 0px #000000 !important;
+  border-radius: 0px !important;
+  color: #000000 !important;
+  font-weight: 600 !important;
+}
+
+/* FAQ Accordion Buttons */
+html.theme-retro-win95 [data-rookie-modal="true"] div:has(> button.w-full) {
+  border-radius: 0px !important;
+  margin-bottom: 4px !important;
+}
+html.theme-retro-win95 [data-rookie-modal="true"] button.w-full {
+  background-color: #dfdfdf !important;
+  border: 2px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important;
+  box-shadow: 1px 1px 0px 0px #000000 !important;
+  border-radius: 0px !important;
+  color: #000000 !important;
+}
+html.theme-retro-win95 [data-rookie-modal="true"] button.w-full * {
+  color: #000000 !important;
+}
+
+/* FAQ Answer Area: White well with clear black text */
+html.theme-retro-win95 [data-rookie-modal="true"] div[class*="border-t"][class*="bg-\[\#090b14\]"] {
+  background-color: #ffffff !important;
+  border: 1px solid #808080 !important;
+  color: #000000 !important;
+  padding: 12px 16px !important;
+}
+html.theme-retro-win95 [data-rookie-modal="true"] div[class*="border-t"][class*="bg-\[\#090b14\]"] * {
+  color: #000000 !important;
+  font-size: 12px !important;
+  line-height: 1.6 !important;
+}
+
+/* Playbook Step Tags (第 1 步, 第 2 步, 第 3 步) */
+html.theme-retro-win95 [data-rookie-modal="true"] span.font-mono {
+  background-color: #dfdfdf !important;
+  border: 1px solid #808080 !important;
+  color: #000080 !important;
+  font-weight: 800 !important;
+  border-radius: 0px !important;
+}
+
+/* Playbook Tab Pickers (剧本一, 剧本二, 剧本三) */
+html.theme-retro-win95 [data-rookie-modal="true"] div.flex.space-x-2 button {
+  background-color: #c0c0c0 !important;
+  border: 2px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important;
+  box-shadow: 1px 1px 0px 0px #000000 !important;
+  border-radius: 0px !important;
+  color: #000000 !important;
+}
+html.theme-retro-win95 [data-rookie-modal="true"] div.flex.space-x-2 button * {
+  color: #000000 !important;
+}
+html.theme-retro-win95 [data-rookie-modal="true"] div.flex.space-x-2 button.bg-indigo-600 {
+  background-color: #000080 !important;
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 0px 0px #000000 !important;
+  color: #ffffff !important;
+}
+html.theme-retro-win95 [data-rookie-modal="true"] div.flex.space-x-2 button.bg-indigo-600 * {
+  color: #ffffff !important;
+}
+
+/* Footer Navigation Bar in Rookie Modal */
+html.theme-retro-win95 [data-rookie-modal="true"] > div:last-child {
+  background-color: #c0c0c0 !important;
+  border-top: 2px solid #ffffff !important;
+  box-shadow: inset 0 1px 0 #808080 !important;
+  border-radius: 0px !important;
+}
+html.theme-retro-win95 [data-rookie-modal="true"] > div:last-child * {
+  color: #000000 !important;
+}
+
+/* Footer Action Buttons: Prev, Next, and Final Action Button (🚀 搞懂啦，开始使用！) */
+html.theme-retro-win95 [data-rookie-modal="true"] > div:last-child button {
+  background-color: #c0c0c0 !important;
+  border: 2px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important;
+  box-shadow: 1px 1px 0px 0px #000000 !important;
+  border-radius: 0px !important;
+  color: #000000 !important;
+  font-weight: 700 !important;
+}
+html.theme-retro-win95 [data-rookie-modal="true"] > div:last-child button * {
+  color: #000000 !important;
+}
+
+/* Final Action Button (搞懂啦，开始使用！): Classic Windows Primary Action Button */
+html.theme-retro-win95 [data-rookie-modal="true"] button[class*="from-emerald-500"] {
+  background-image: none !important;
+  background-color: #000080 !important;
+  border: 2px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important;
+  box-shadow: 1px 1px 0px 0px #000000 !important;
+  border-radius: 0px !important;
+  color: #ffffff !important;
+  font-weight: 800 !important;
+}
+html.theme-retro-win95 [data-rookie-modal="true"] button[class*="from-emerald-500"] * {
+  color: #ffffff !important;
+}
+html.theme-retro-win95 [data-rookie-modal="true"] button[class*="from-emerald-500"] svg {
+  stroke: #ffffff !important;
+}
+
+
+
+
+/* ========================================================================= */
+/* 11.7. Skill Forge Studio Modal (Skill 专属锻造工坊) Retro Win95/98 Skin */
+/* ========================================================================= */
+
+/* Root Modal Window: Solid Microsoft Gray #c0c0c0, 3D raised border, squared corners */
+html.theme-retro-win95 [data-forge-modal="true"] {
+  background-color: #c0c0c0 !important;
+  border: 3px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important;
+  box-shadow: 2px 2px 0px 0px #000000 !important;
+  border-radius: 0px !important;
+  color: #000000 !important;
+  font-family: 'MS Sans Serif', Tahoma, 'Segoe UI', Arial, sans-serif !important;
+}
+
+/* Modal Titlebar: Classic Windows 95/98 Active Title Bar Gradient */
+html.theme-retro-win95 [data-forge-modal="true"] .forge-titlebar {
+  background: linear-gradient(90deg, #000080 0%, #1084d0 100%) !important;
+  border-bottom: 2px solid #808080 !important;
+  border-radius: 0px !important;
+  padding: 4px 8px !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-titlebar * {
+  color: #ffffff !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-titlebar svg {
+  color: #ffffff !important;
+  stroke: #ffffff !important;
+}
+/* Titlebar flame icon container: strip modern purple gradient */
+html.theme-retro-win95 [data-forge-modal="true"] .forge-titlebar div[class*="from-purple-600"] {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  width: auto !important;
+  height: auto !important;
+  border-radius: 0px !important;
+}
+
+/* Titlebar Close Button: Windows 95/98 square ✕ box */
+html.theme-retro-win95 [data-forge-modal="true"] .forge-titlebar button:has(svg.lucide-x) {
+  width: 20px !important;
+  height: 20px !important;
+  min-width: 20px !important;
+  min-height: 20px !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background-color: #c0c0c0 !important;
+  border: 2px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important;
+  box-shadow: 1px 1px 0 #000000 !important;
+  border-radius: 0px !important;
+  cursor: pointer !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-titlebar button:has(svg.lucide-x) svg {
+  color: #000000 !important;
+  stroke: #000000 !important;
+  stroke-width: 2.5 !important;
+  width: 12px !important;
+  height: 12px !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-titlebar button:has(svg.lucide-x):active {
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 0 #000000 !important;
+}
+
+/* Titlebar Sessions Button */
+html.theme-retro-win95 [data-forge-modal="true"] .forge-titlebar button[title*="会话"],
+html.theme-retro-win95 [data-forge-modal="true"] .forge-titlebar button[title*="Session"] {
+  background-color: #c0c0c0 !important;
+  border: 2px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important;
+  box-shadow: 1px 1px 0 #000000 !important;
+  border-radius: 0px !important;
+  color: #000000 !important;
+  font-weight: 700 !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-titlebar button[title*="会话"] *,
+html.theme-retro-win95 [data-forge-modal="true"] .forge-titlebar button[title*="Session"] * {
+  color: #000000 !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-titlebar button[title*="会话"] svg,
+html.theme-retro-win95 [data-forge-modal="true"] .forge-titlebar button[title*="Session"] svg {
+  stroke: #000080 !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-titlebar button[title*="会话"] span[class*="font-mono"],
+html.theme-retro-win95 [data-forge-modal="true"] .forge-titlebar button[title*="Session"] span[class*="font-mono"] {
+  background-color: #ffffff !important;
+  color: #000080 !important;
+  border: 1px solid #808080 !important;
+  box-shadow: inset 1px 1px 0 #000000 !important;
+  border-radius: 0px !important;
+  font-weight: 800 !important;
+}
+
+/* Titlebar Mode Switcher (AI Mode vs 12 LEGO Mode) */
+html.theme-retro-win95 [data-forge-modal="true"] .forge-titlebar div[class*="bg-\[\#161828\]"] {
+  background-color: #808080 !important;
+  border: 2px solid !important;
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  border-radius: 0px !important;
+  padding: 1px !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-titlebar div[class*="bg-\[\#161828\]"] button {
+  background-color: #c0c0c0 !important;
+  color: #000000 !important;
+  border-radius: 0px !important;
+  border: 2px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important;
+  box-shadow: 1px 1px 0 #000000 !important;
+  font-weight: 700 !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-titlebar div[class*="bg-\[\#161828\]"] button * {
+  color: #000000 !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-titlebar div[class*="bg-\[\#161828\]"] button svg {
+  stroke: #000080 !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-titlebar div[class*="bg-\[\#161828\]"] button.bg-purple-600 {
+  background-color: #000080 !important;
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 0 #000000 !important;
+  color: #ffffff !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-titlebar div[class*="bg-\[\#161828\]"] button.bg-purple-600 * {
+  color: #ffffff !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-titlebar div[class*="bg-\[\#161828\]"] button.bg-purple-600 svg {
+  stroke: #ffffff !important;
+}
+
+/* Left History Sessions Drawer: Classic Win95 Gray Pane with 3D Border */
+html.theme-retro-win95 [data-forge-modal="true"] .forge-history-drawer {
+  background-color: #c0c0c0 !important;
+  border-right: 2px solid #808080 !important;
+  color: #000000 !important;
+  border-radius: 0px !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-history-header {
+  background-color: #c0c0c0 !important;
+  border-bottom: 2px solid #808080 !important;
+  color: #000000 !important;
+  border-radius: 0px !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-history-header h3 {
+  color: #000080 !important;
+  font-weight: 800 !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-history-header * {
+  color: #000000 !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-history-header svg {
+  stroke: #000080 !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-history-header span[class*="font-mono"] {
+  background-color: #ffffff !important;
+  color: #000080 !important;
+  border: 1px solid #808080 !important;
+  box-shadow: inset 1px 1px 0 #000000 !important;
+  border-radius: 0px !important;
+  font-weight: 800 !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-history-drawer .forge-new-session-btn {
+  background-color: #c0c0c0 !important;
+  border: 2px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important;
+  box-shadow: 1px 1px 0 #000000 !important;
+  color: #000080 !important;
+  font-weight: 800 !important;
+  border-radius: 0px !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-history-drawer .forge-new-session-btn * {
+  color: #000080 !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-history-drawer .forge-new-session-btn svg {
+  stroke: #000080 !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-history-drawer .forge-new-session-btn:hover {
+  background-color: #d4d0c8 !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-history-drawer .forge-new-session-btn:active {
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 0 #000000 !important;
+  transform: translate(1px, 1px);
+}
+
+/* History Search Input: Pure White Sunken Input */
+html.theme-retro-win95 [data-forge-modal="true"] .forge-search-input {
+  background-color: #ffffff !important;
+  border: 2px solid !important;
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 0 #000000 !important;
+  color: #000000 !important;
+  border-radius: 0px !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-search-input::placeholder {
+  color: #666666 !important;
+}
+
+/* History Items List & High-Contrast Empty State */
+html.theme-retro-win95 [data-forge-modal="true"] .forge-history-list {
+  background-color: #c0c0c0 !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-history-list .text-center {
+  color: #000000 !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-history-list svg {
+  color: #000080 !important;
+  stroke: #000080 !important;
+  animation: none !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-history-list p.font-semibold {
+  color: #000080 !important;
+  font-weight: 800 !important;
+  font-size: 13px !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-history-list p.text-\[11px\] {
+  color: #222222 !important;
+  font-weight: 600 !important;
+  line-height: 1.5 !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-history-item {
+  background-color: #ffffff !important;
+  border: 2px solid !important;
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 0px 0px #000000 !important;
+  border-radius: 0px !important;
+  color: #000000 !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-history-item:hover {
+  background-color: #f5f5f5 !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-history-item.is-selected {
+  background-color: #e8edf5 !important;
+  border-color: #000080 #ffffff #ffffff #000080 !important;
+  box-shadow: inset 2px 2px 0px 0px #000080 !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-history-title {
+  color: #000080 !important;
+  font-weight: 800 !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-history-prompt,
+html.theme-retro-win95 [data-forge-modal="true"] .forge-history-desc {
+  color: #333333 !important;
+  font-weight: 500 !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-history-item span {
+  color: #000000 !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-history-item span[class*="rounded"] {
+  background-color: #dfdfdf !important;
+  border: 1px solid #808080 !important;
+  border-radius: 0px !important;
+  color: #000000 !important;
+  font-weight: 700 !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-history-item button {
+  background-color: #c0c0c0 !important;
+  border: 1px solid #808080 !important;
+  border-radius: 0px !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-history-item button * {
+  color: #000000 !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-history-item button:hover {
+  background-color: #d4d0c8 !important;
+}
+
+/* History Drawer Footer */
+html.theme-retro-win95 [data-forge-modal="true"] .forge-history-drawer > div:last-child {
+  background-color: #c0c0c0 !important;
+  border-top: 2px solid #808080 !important;
+  color: #333333 !important;
+}
+
+/* Main Workspace / Content Area */
+html.theme-retro-win95 [data-forge-modal="true"] .flex-1 {
+  background-color: #c0c0c0 !important;
+  color: #000000 !important;
+}
+
+/* Model Selector Button & BYOK Key Trigger */
+html.theme-retro-win95 [data-forge-modal="true"] button[class*="rounded-full"][class*="bg-purple-950"],
+html.theme-retro-win95 [data-forge-modal="true"] button[class*="rounded-full"][class*="bg-gray-900"] {
+  background-color: #c0c0c0 !important;
+  border: 2px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important;
+  box-shadow: 1px 1px 0 #000000 !important;
+  border-radius: 0px !important;
+  color: #000000 !important;
+  font-weight: 700 !important;
+  transition: none !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] button[class*="rounded-full"][class*="bg-purple-950"] *,
+html.theme-retro-win95 [data-forge-modal="true"] button[class*="rounded-full"][class*="bg-gray-900"] * {
+  color: #000000 !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] button[class*="rounded-full"] span[class*="font-mono"] {
+  background-color: #ffffff !important;
+  color: #000080 !important;
+  border: 1px solid #808080 !important;
+  box-shadow: inset 1px 1px 0 #000000 !important;
+  border-radius: 0px !important;
+  font-weight: 800 !important;
+  padding: 1px 6px !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] button[class*="rounded-full"] svg {
+  color: #000080 !important;
+  stroke: #000080 !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] button[class*="rounded-full"]:hover {
+  background-color: #d4d0c8 !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] button[class*="rounded-full"]:active {
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 0 #000000 !important;
+  transform: translate(1px, 1px);
+}
+
+/* Model Popover Menu (Windows 98 Menu Bar Dropdown) */
+html.theme-retro-win95 [data-forge-modal="true"] div[class*="bg-\[\#121424\]"] {
+  background-color: #c0c0c0 !important;
+  border: 3px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important;
+  box-shadow: 2px 2px 0px 0px #000000 !important;
+  border-radius: 0px !important;
+  color: #000000 !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] div[class*="bg-\[\#121424\]"] * {
+  color: #000000 !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] div[class*="bg-\[\#121424\]"] button {
+  border-radius: 0px !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] div[class*="bg-\[\#121424\]"] button:hover {
+  background-color: #000080 !important;
+  color: #ffffff !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] div[class*="bg-\[\#121424\]"] button:hover * {
+  color: #ffffff !important;
+}
+
+/* HERO TITLE & SUBTITLE - AUTHENTIC WIN98 SOLID BLACK HEADINGS */
+html.theme-retro-win95 [data-forge-modal="true"] .forge-hero-title,
+html.theme-retro-win95 [data-forge-modal="true"] h1 {
+  color: #000000 !important;
+  font-size: 22px !important;
+  font-weight: 900 !important;
+  letter-spacing: normal !important;
+  text-shadow: none !important;
+  font-family: Tahoma, 'Microsoft Sans Serif', Arial, sans-serif !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-hero-subtitle,
+html.theme-retro-win95 [data-forge-modal="true"] p.text-xs {
+  color: #222222 !important;
+  font-size: 12px !important;
+  font-weight: normal !important;
+  font-family: Tahoma, 'Microsoft Sans Serif', Arial, sans-serif !important;
+}
+
+/* Ecosystem Compatibility Banner: 100% Classic Win98 Gray Sunken Panel */
+html.theme-retro-win95 [data-forge-modal="true"] .forge-compat-banner {
+  background-image: none !important;
+  background-color: #c0c0c0 !important;
+  background: #c0c0c0 !important;
+  border: 2px solid !important;
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 0 #000000 !important;
+  border-radius: 0px !important;
+  color: #000000 !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-compat-banner * {
+  color: #000000 !important;
+  font-weight: 700 !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-compat-banner svg {
+  color: #000000 !important;
+  stroke: #000000 !important;
+  animation: none !important;
+}
+/* System Status Indicators (Antigravity, Claude Code, Cursor, Codex, DeepSeek) */
+html.theme-retro-win95 [data-forge-modal="true"] .forge-compat-banner span[class*="rounded"] {
+  background-color: #c0c0c0 !important;
+  border: 1px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important;
+  box-shadow: 1px 1px 0 #000000 !important;
+  border-radius: 0px !important;
+  color: #000000 !important;
+  font-weight: 700 !important;
+  padding: 1px 6px !important;
+}
+
+/* Prompt Card: Unified Microsoft Gray Container with No Purple Borders */
+html.theme-retro-win95 [data-forge-modal="true"] .forge-prompt-card {
+  background-color: #c0c0c0 !important;
+  background: #c0c0c0 !important;
+  border: 2px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important;
+  box-shadow: 1px 1px 0 #000000 !important;
+  border-radius: 0px !important;
+  color: #000000 !important;
+}
+/* Textarea: Authentic Windows Pure White EditBox with Blinking Black Caret */
+html.theme-retro-win95 [data-forge-modal="true"] .forge-prompt-textarea {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+  color: #000000 !important;
+  font-weight: 500 !important;
+  font-size: 13px !important;
+  border: 2px solid !important;
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 0 #000000 !important;
+  border-radius: 0px !important;
+  padding: 6px 8px !important;
+  caret-color: #000000 !important;
+  cursor: text !important;
+  user-select: text !important;
+  -webkit-user-select: text !important;
+  font-family: Tahoma, 'Microsoft Sans Serif', Arial, sans-serif !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-prompt-textarea::placeholder {
+  color: #808080 !important;
+  font-weight: normal !important;
+  font-style: normal !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-prompt-card > div.border-t {
+  border-top: 1px solid #808080 !important;
+  box-shadow: 0 1px 0 #ffffff !important;
+  margin-top: 8px !important;
+  padding-top: 6px !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-prompt-hint {
+  color: #444444 !important;
+  font-weight: normal !important;
+}
+
+/* Primary Action Button (✨ 开始智能创造): Pure Win98 Gray 3D Bevel Button */
+html.theme-retro-win95 [data-forge-modal="true"] .forge-submit-btn {
+  background-image: none !important;
+  background-color: #c0c0c0 !important;
+  background: #c0c0c0 !important;
+  border: 2px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important;
+  box-shadow: 1px 1px 0 #000000 !important;
+  border-radius: 0px !important;
+  color: #000000 !important;
+  font-weight: 700 !important;
+  transition: none !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-submit-btn * {
+  color: #000000 !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-submit-btn svg {
+  color: #000000 !important;
+  stroke: #000000 !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-submit-btn:hover {
+  background-color: #d4d0c8 !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-submit-btn:active {
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 0 #000000 !important;
+  transform: translate(1px, 1px) !important;
+}
+
+/* Warning Banner for Missing API Key: 100% Microsoft Gray GroupBox (No Yellow!) */
+html.theme-retro-win95 [data-forge-modal="true"] .forge-warning-banner {
+  background-color: #c0c0c0 !important;
+  background: #c0c0c0 !important;
+  border: 2px solid !important;
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 0 #000000 !important;
+  border-radius: 0px !important;
+  color: #000000 !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-warning-banner div:has(> svg) {
+  background-color: #c0c0c0 !important;
+  border: 1px solid #808080 !important;
+  box-shadow: 1px 1px 0 #ffffff !important;
+  border-radius: 0px !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-warning-banner svg {
+  color: #000000 !important;
+  stroke: #000000 !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-warning-banner .forge-warning-title {
+  color: #000000 !important;
+  font-weight: 800 !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-warning-banner .forge-warning-desc {
+  color: #222222 !important;
+  font-weight: normal !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-warning-banner .forge-warning-btn,
+html.theme-retro-win95 [data-forge-modal="true"] .forge-warning-banner .forge-warning-alt-btn {
+  background-image: none !important;
+  background: #c0c0c0 !important;
+  background-color: #c0c0c0 !important;
+  border: 2px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important;
+  box-shadow: 1px 1px 0 #000000 !important;
+  border-radius: 0px !important;
+  color: #000000 !important;
+  font-weight: 700 !important;
+  transition: none !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-warning-banner .forge-warning-btn *,
+html.theme-retro-win95 [data-forge-modal="true"] .forge-warning-banner .forge-warning-alt-btn * {
+  color: #000000 !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-warning-banner .forge-warning-btn:hover,
+html.theme-retro-win95 [data-forge-modal="true"] .forge-warning-banner .forge-warning-alt-btn:hover {
+  background-color: #d4d0c8 !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-warning-banner .forge-warning-btn:active,
+html.theme-retro-win95 [data-forge-modal="true"] .forge-warning-banner .forge-warning-alt-btn:active {
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 0 #000000 !important;
+  transform: translate(1px, 1px) !important;
+}
+
+/* Inspiration Pills: Classic 3D Raised Buttons */
+html.theme-retro-win95 [data-forge-modal="true"] .forge-inspiration-label {
+  color: #000000 !important;
+  font-weight: 800 !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-inspiration-pill {
+  background-color: #c0c0c0 !important;
+  border: 2px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important;
+  box-shadow: 1px 1px 0 #000000 !important;
+  border-radius: 0px !important;
+  color: #000000 !important;
+  font-weight: 700 !important;
+  font-size: 12px !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-inspiration-pill:hover {
+  background-color: #d4d0c8 !important;
+  color: #000080 !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] .forge-inspiration-pill:active {
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 0 #000000 !important;
+  transform: translate(1px, 1px);
+}
+
+/* LEGO Mode Controls & Cards */
+html.theme-retro-win95 [data-forge-modal="true"] div[class*="bg-\[\#121422\]"] {
+  background-color: #c0c0c0 !important;
+  border: 2px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important;
+  border-radius: 0px !important;
+  color: #000000 !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] div[class*="bg-\[\#121422\]"] input,
+html.theme-retro-win95 [data-forge-modal="true"] div[class*="bg-\[\#121422\]"] select {
+  background-color: #ffffff !important;
+  border: 2px solid !important;
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 0 #000000 !important;
+  border-radius: 0px !important;
+  color: #000000 !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] div[class*="bg-\[\#121422\]"] button {
+  border-radius: 0px !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] label[class*="border"] {
+  background-color: #ffffff !important;
+  border: 2px solid !important;
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 0 #000000 !important;
+  border-radius: 0px !important;
+  color: #000000 !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] label[class*="border"] * {
+  color: #000000 !important;
+}
+
+/* Revealed Stage: Overview Bar, Doctor Diagnostics, Editor & Preview */
+html.theme-retro-win95 [data-forge-modal="true"] div[class*="bg-\[\#0f111c\]"] {
+  background-color: #c0c0c0 !important;
+  border-bottom: 2px solid #808080 !important;
+  border-radius: 0px !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] div[class*="bg-\[\#0f111c\]"] * {
+  color: #000000 !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] div[class*="bg-\[\#0f111c\]"] button {
+  background-color: #c0c0c0 !important;
+  border: 2px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important;
+  box-shadow: 1px 1px 0 #000000 !important;
+  border-radius: 0px !important;
+  color: #000000 !important;
+  font-weight: 700 !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] div[class*="bg-\[\#0f111c\]"] button.bg-gradient-to-r.from-emerald-600 {
+  background-image: none !important;
+  background-color: #000080 !important;
+  color: #ffffff !important;
+  font-weight: 800 !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] div[class*="bg-\[\#0f111c\]"] button.bg-gradient-to-r.from-emerald-600 * {
+  color: #ffffff !important;
+}
+
+/* Doctor Diagnostics Banner */
+html.theme-retro-win95 [data-forge-modal="true"] div[class*="bg-\[\#090b14\]"] {
+  background-color: #ffffff !important;
+  border-bottom: 2px solid #808080 !important;
+  box-shadow: inset 1px 1px 0 #000000 !important;
+  color: #000000 !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] div[class*="bg-\[\#090b14\]"] * {
+  color: #000000 !important;
+}
+
+/* Editor & Markdown Preview */
+html.theme-retro-win95 [data-forge-modal="true"] textarea[class*="font-mono"] {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid !important;
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 0 #000000 !important;
+  border-radius: 0px !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] div.prose {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid !important;
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 0 #000000 !important;
+  border-radius: 0px !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] div.prose * {
+  color: #000000 !important;
+}
+html.theme-retro-win95 [data-forge-modal="true"] div.prose h1,
+html.theme-retro-win95 [data-forge-modal="true"] div.prose h2,
+html.theme-retro-win95 [data-forge-modal="true"] div.prose h3 {
+  color: #000080 !important;
+  font-weight: 800 !important;
+}
+
+/* AI Fallback Confirmation Modal */
+html.theme-retro-win95 div[data-ai-fallback-dialog="true"] .fallback-dialog-window {
+  background-color: #c0c0c0 !important;
+  border: 3px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important;
+  box-shadow: 2px 2px 0 #000000 !important;
+  border-radius: 0px !important;
+  color: #000000 !important;
+}
+html.theme-retro-win95 div[data-ai-fallback-dialog="true"] .fallback-dialog-window * {
+  color: #000000 !important;
+}
+html.theme-retro-win95 div[data-ai-fallback-dialog="true"] .fallback-dialog-window div[class*="bg-\[\#0f1118\]"] {
+  background-color: #ffffff !important;
+  border: 2px solid !important;
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 0 #000000 !important;
+  color: #800000 !important;
+}
+html.theme-retro-win95 div[data-ai-fallback-dialog="true"] .fallback-dialog-window div[class*="bg-\[\#0f1118\]"] * {
+  color: #800000 !important;
+}
+html.theme-retro-win95 div[data-ai-fallback-dialog="true"] .fallback-dialog-window button {
+  background-color: #c0c0c0 !important;
+  border: 2px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important;
+  box-shadow: 1px 1px 0 #000000 !important;
+  border-radius: 0px !important;
+  color: #000000 !important;
+  font-weight: 700 !important;
+}
+
+/* ========================================================================= */
+/* Light Theme Scoping for Skill Forge Studio */
+/* ========================================================================= */
+.theme-light [data-forge-modal="true"] {
+  background-color: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15) !important;
+  color: #0f172a !important;
+}
+.theme-light [data-forge-modal="true"] .forge-titlebar {
+  background-color: #f8fafc !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  color: #0f172a !important;
+}
+.theme-light [data-forge-modal="true"] .forge-titlebar h2 {
+  color: #0f172a !important;
+}
+.theme-light [data-forge-modal="true"] .forge-titlebar button[title*="会话"],
+.theme-light [data-forge-modal="true"] .forge-titlebar button[title*="Session"] {
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+  color: #334155 !important;
+}
+.theme-light [data-forge-modal="true"] .forge-history-drawer {
+  background-color: #f8fafc !important;
+  border-right: 1px solid #e2e8f0 !important;
+}
+.theme-light [data-forge-modal="true"] .forge-history-header {
+  background-color: #f1f5f9 !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+}
+.theme-light [data-forge-modal="true"] .forge-history-header h3 {
+  color: #0f172a !important;
+}
+.theme-light [data-forge-modal="true"] .forge-search-input {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+.theme-light [data-forge-modal="true"] .forge-search-input::placeholder {
+  color: #94a3b8 !important;
+}
+.theme-light [data-forge-modal="true"] .forge-history-item {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #0f172a !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+}
+.theme-light [data-forge-modal="true"] .forge-history-item:hover {
+  background-color: #f8fafc !important;
+  border-color: #cbd5e1 !important;
+}
+.theme-light [data-forge-modal="true"] .forge-history-item.is-selected {
+  background-color: #f5f3ff !important;
+  border-color: #a855f7 !important;
+}
+.theme-light [data-forge-modal="true"] .forge-history-title {
+  color: #1e1b4b !important;
+}
+.theme-light [data-forge-modal="true"] .forge-history-prompt,
+.theme-light [data-forge-modal="true"] .forge-history-desc {
+  color: #64748b !important;
+}
+.theme-light [data-forge-modal="true"] .forge-hero-title {
+  color: #0f172a !important;
+}
+.theme-light [data-forge-modal="true"] .forge-hero-subtitle {
+  color: #475569 !important;
+}
+.theme-light [data-forge-modal="true"] .forge-compat-banner {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+  color: #4338ca !important;
+}
+.theme-light [data-forge-modal="true"] .forge-compat-banner span {
+  color: #4338ca !important;
+}
+.theme-light [data-forge-modal="true"] .forge-compat-banner span[class*="rounded"] {
+  background-color: #e0e7ff !important;
+  color: #3730a3 !important;
+  border-color: #c7d2fe !important;
+}
+.theme-light [data-forge-modal="true"] .forge-prompt-card {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05) !important;
+}
+.theme-light [data-forge-modal="true"] .forge-prompt-textarea {
+  color: #0f172a !important;
+}
+.theme-light [data-forge-modal="true"] .forge-prompt-textarea::placeholder {
+  color: #94a3b8 !important;
+}
+.theme-light [data-forge-modal="true"] .forge-prompt-hint {
+  color: #64748b !important;
+}
+.theme-light [data-forge-modal="true"] .forge-warning-banner {
+  background-color: #fffbeb !important;
+  border-color: #fde68a !important;
+  color: #92400e !important;
+}
+.theme-light [data-forge-modal="true"] .forge-warning-title {
+  color: #92400e !important;
+}
+.theme-light [data-forge-modal="true"] .forge-warning-desc {
+  color: #b45309 !important;
+}
+.theme-light [data-forge-modal="true"] .forge-inspiration-label {
+  color: #475569 !important;
+}
+.theme-light [data-forge-modal="true"] .forge-inspiration-pill {
+  background-color: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
+  color: #334155 !important;
+}
+.theme-light [data-forge-modal="true"] .forge-inspiration-pill:hover {
+  background-color: #f5f3ff !important;
+  border-color: #c084fc !important;
+  color: #6b21a8 !important;
+}

@@ -1,0 +1,47 @@
+[package]
+name = "skilldocker"
+version = "1.0.0"
+description = "The Visual Dock & Live Control Hub for AI Agent Skills"
+edition = "2021"
+
+[lib]
+name = "skilldocker_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2.0", features = [] }
+
+[dependencies]
+tauri = { version = "2.0", features = ["tray-icon"] }
+tauri-plugin-global-shortcut = "2.0"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+reqwest = { version = "0.12", features = ["json"] }
+tauri-plugin-dialog = "2"
+sha2 = "0.10"
+regex = "1"
+ed25519-dalek = "2"
+base64 = "0.22"
+chrono = { version = "0.4", default-features = false, features = ["std", "clock"] }
+url = "2"
+zip = { version = "2.2", default-features = false, features = ["deflate"] }
+
+[target.'cfg(target_os = "windows")'.dependencies]
+keyring = { version = "3", features = ["windows-native"] }
+
+[target.'cfg(target_os = "macos")'.dependencies]
+keyring = { version = "3", features = ["apple-native"] }
+
+[target.'cfg(target_os = "linux")'.dependencies]
+keyring = { version = "3", features = ["sync-secret-service", "crypto-rust"] }
+
+[dev-dependencies]
+tempfile = "3"
+
+[profile.dev]
+incremental = false
+debug = 0
+
+[profile.test]
+incremental = false
+debug = 0
