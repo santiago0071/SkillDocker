@@ -20,6 +20,5 @@ window.SKILLDOCKER_CONFIG = {
   paddleDiscountCode: 'LAUNCH30',
 
   // 客户端软件公开下载地址 (例如 GitHub Releases 或 Cloudflare R2 下载链接)。
-  // 当前尚未公开发布，留空时官网下载按钮如实显示“即将发布”，配置有效地址后自动启用。
-  downloadUrl: ''
+  downloadUrl: 'https://github.com/santiago0071/SkillDocker/releases/download/v1.0.0/SkillDocker_1.0.0_x64-setup.exe'
 };
