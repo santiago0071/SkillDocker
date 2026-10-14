@@ -1,7 +1,7 @@
 # SkillDocker 🛸
 
-> **AI 编程工具规则与技能的桌面悬浮管理面板**  
-> **A lightweight desktop floating dock to inspect, toggle, and hot-inject rules across Claude Code, Cursor, Antigravity, and Codex.**  
+> **多款 AI 编程工具 Skills 的桌面悬浮管理面板**  
+> **A lightweight desktop floating dock to inspect, toggle, and hot-inject directives across Claude Code, Cursor, Antigravity, and Codex.**  
 > *集中查看、一键开关、随时为正在运行的 AI 追加临时要求。纯本地离线运行，不上传代码。*
 
 [![Release: v1.0.0](https://img.shields.io/badge/Release-v1.0.0-blue.svg)](https://github.com/santiago0071/SkillDocker/releases)
@@ -17,17 +17,17 @@
 
 ## 📖 这个工具解决什么实际问题？ / Problem Statement
 
-日常用多个 AI 编程工具（比如 Claude Code、Google Antigravity、Codex、Cursor）时，本地往往积累了大量规约和提示词文件，散落在各个深层隐藏目录里（`~/.claude`、`~/.gemini`、`~/.codex`、`.cursorrules`）。在日常写代码中，常常有两个非常烦人的实际痛点：
+日常用多个 AI 编程工具（比如 Claude Code、Google Antigravity、Codex、Cursor）时，本地往往积累了大量 Skills（散落在各个深层隐藏目录如 `~/.claude/skills`、`~/.gemini`、`~/.codex`、`.cursorrules`）。在日常写代码中，常常有两个非常烦人的实际痛点：
 
-When working with multiple AI coding tools (Claude Code, Antigravity, Codex, Cursor), developers end up with dozens of rule files scattered across hidden dot-directories. Two real headaches constantly happen:
+When working with multiple AI coding tools (Claude Code, Antigravity, Codex, Cursor), developers end up with dozens of Skills scattered across hidden dot-directories. Two real headaches constantly happen:
 
 1. **看不见、记不清 (散落在深层目录，无法全局感知)**：
-   规约文件藏在不同的文件夹里。开工时根本记不清当前到底有哪些规则在生效，不同的规则之间会不会相互冲突。
-   *Rules are buried in different directories. It is hard to see what guidelines are currently active and whether they contradict each other.*
+   Skills 藏在不同的文件夹里。开工时根本记不清当前到底有哪些 Skills 在生效，不同的 Skills 之间会不会相互冲突。
+   *Skills are buried in different directories. It is hard to see what Skills are currently active and whether they contradict each other.*
 
-2. **临时叮嘱容易忘，每次改文件又太麻烦 (聊天提示词 vs 长期规约)**：
-   在聊天窗口里临时叮嘱 AI“这次只改前端，不要动后端接口”，会话一刷新或上下文一压缩，AI 扭头就忘了；而如果每次都手动去翻隐藏文件夹修改规则文件，又很繁琐。
-   *Telling the AI "don't touch backend" in chat gets forgotten once context compacts. But manually digging into hidden folders to update rule files has too much friction.*
+2. **临时叮嘱容易忘，每次手动改文件太麻烦 (聊天提示词 vs 长期沉淀的 Skills)**：
+   在聊天窗口里临时叮嘱 AI“这次只改前端，不要动后端接口”，会话一刷新或上下文一压缩，AI 扭头就忘了；而如果每次都手动去翻隐藏文件夹修改 Skill 文件，又很繁琐。
+   *Telling the AI "don't touch backend" in chat gets forgotten once context compacts. But manually digging into hidden folders to update Skill files has too much friction.*
 
 ![Novice Academy Quote](assets/screenshots/novice-academy-quote.png)
 
@@ -38,10 +38,10 @@ When working with multiple AI coding tools (Claude Code, Antigravity, Codex, Cur
 
 ## ✨ 核心功能（它能帮你做什么？） / Core Capabilities
 
-### 1. 🎛️ 集中查看与管理多工具规则 (Skill & Rule Cockpit)
-* **自动扫描多工具规则**：自动识别本地 Claude Code、Google Antigravity、Codex 和 Cursor 项目里的规则与技能文件，集中展示。
-* **卡片式阅读与搜索**：不用手动翻隐藏目录，所有规则用清晰卡片呈现，支持毫秒级全文检索与分类筛选。
-* **一键开关**：点击按钮即可启用或停用某条规则，软件自动在后台切换，无需手动重命名文件。
+### 1. 🎛️ 集中查看与管理多工具 Skills (Visual Skills Cockpit)
+* **自动扫描多工具 Skills**：自动识别本地 Claude Code、Google Antigravity、Codex 和 Cursor 项目里的所有 Skills，集中展示。
+* **卡片式阅读与搜索**：不用手动翻隐藏目录，所有 Skills 用清晰卡片呈现，支持毫秒级全文检索与分类筛选。
+* **一键开关**：点击按钮即可启用或停用某个 Skill，软件自动在后台切换，无需手动重命名文件。
 
 ### 2. ⚡ 随时呼出输入框，为 AI 追加临时要求 (Quick Directive Injector)
 * **全局快捷键一键唤醒**：在写代码的任何时候按下 `Alt + Space`（macOS 为 `Option + Space`），立即呼出轻量小面板。
@@ -53,14 +53,14 @@ When working with multiple AI coding tools (Claude Code, Antigravity, Codex, Cur
 
 ![SkillDocker 98 Retro Nostalgic Skin](assets/screenshots/skin-win98-retro.png)
 
-### 4. 🛠️ 规则组装与编辑工坊 (Skill Forge)
-* **积木式拼接**：将角色设定、约束条件、触发词等模块化快速拼装成标准的规约文件。
-* **自带模型检查 (BYOK)**：填入自己的 API Key，即可调用大模型帮您检查规则格式是否合理并给出润色建议。
+### 4. 🛠️ Skill Forge 技能工坊 (Visual Studio)
+* **积木式拼接**：将角色设定、约束条件、触发词等模块化快速拼装成标准的 Skill 文件。
+* **自带模型检查 (BYOK)**：填入自己的 API Key，即可调用大模型帮您检查 Skill 质量并给出润色建议。
 
 ![Skill Forge Studio](assets/screenshots/skill-forge-studio.png)
 
 ### 5. 🛡️ 纯本地离线运行，绝不上传您的代码 (100% Local-First)
-* **0 云端依赖**：所有规则扫描、读取与修改只在您的本地电脑执行，绝无任何常驻云端服务，绝不上传您的项目代码与私密提示词。
+* **0 云端依赖**：所有 Skills 扫描、读取与修改只在您的本地电脑执行，绝无任何常驻云端服务，绝不上传您的项目代码与私密提示词。
 * **离线永久使用**：商业版采用客户端本地非对称数字签名校验，断网也能永久正常使用。
 
 ---
